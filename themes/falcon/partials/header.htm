@@ -1,0 +1,48 @@
+    <!---HEADER START
+						==================================-->
+    <header id="header" class="main-header">
+      <nav class="main-nav nav-expanded">
+        <div class="container">
+          <div class="left-nav">
+            <div class="nav-brand">
+              <a href="index.html">
+                <img src="{{ 'assets/images/logo.png' | theme }}" alt="navbar-logo" />
+              </a>
+            </div>
+
+            <input id="main-menu-state" type="checkbox" />
+            <label class="main-menu-btn" for="main-menu-state">
+              <span class="main-menu-btn-icon"></span> Toggle main menu
+              visibility
+            </label>
+            <ul id="main-menu" style="width: 100%;">
+              <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}">{{ 'Əsas səhifə' |_ }}</a>
+              </li>
+              <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#about-us">{{ 'Haqqımızda' |_ }}</a>
+              </li>
+              <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#mission">{{ 'Missiya' |_ }}</a>
+              </li>
+              <li class="menu-item">
+                <a class="nav-link" href="{{ 'blog' | page }}">{{ 'Bloq' |_ }}</a>
+              </li>
+              <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#contacts">{{ 'Əlaqə' |_ }}</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="right-nav">
+            <div class="nav-menu">
+              <div class="contact-button">
+                {% component 'extendedLocalePicker' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- end navbar -->
+    </header>
+    <!---EMD HEADER-->

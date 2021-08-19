@@ -1,0 +1,17 @@
+
+
+<form class="text-container" method="post" data-request="{{ __SELF__ }}::onSend"  data-request-validate data-request-flash>
+    <div class="text-container-fluid">
+        <input class="input col-12" placeholder="{{ 'Ad' |_}}" name="name"/>
+        <input class="input col-12" placeholder="{{ 'Soyad' |_}}" name="surname"/>
+        <input class="input col-12" placeholder="{{ 'Email' |_}}" name="email"/>
+    </div>
+    <textarea class="col-12 textarea" name="msg" placeholder="{{ 'Mesaj' |_}}"></textarea>
+    <div class="send-title">
+        {{ 'Göndərmək' |_ }}
+        <button class="button-rw ms-2" type="submit">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+</form>

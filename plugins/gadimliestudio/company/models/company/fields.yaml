@@ -1,0 +1,167 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+
+fields:
+    
+    name:
+        label: Şirkətin adı
+        span: storm
+        cssClass: col-md-6
+        tab: Ümumi məlumat
+    address:
+        tab: Əlaqə
+        label: Ünvan
+        span: storm
+        cssClass: col-md-6
+
+tabs:
+    fields:
+# Main Info
+        # image:
+        #     tab: Ümumi məlumat
+        #     label: Haqqimizda shekil
+        #     type: mediafinder 
+        #     span: storm
+        #     cssClass: col-md-6
+
+        about:
+            tab: Ümumi məlumat
+            label: Haqqımızda mətn
+            type: richeditor
+            span: storm
+            cssClass: col-md-6
+        excerpt:
+            tab: Ümumi məlumat
+            label: Qısa məlumat
+            type: richeditor 
+            span: storm
+            cssClass: col-md-6
+# Partners 
+
+        project_title_text:
+            tab: Layihələr
+            type: richeditor
+            label: Layihələr başlıqı
+        project_description:
+            tab: Layihələr
+            type: richeditor
+            label: Layihələr təsviri
+
+        partner_description:
+            label: Partnyorlar haqqında təsvir 
+            type: textarea
+            tab: Partnyorlar
+            span: storm
+            cssClass: col-md-12
+        partners:
+            tab: Partnyorlar
+            type: repeater
+            prompt: Yeni partnyor əlavə et
+            form:
+                fields:
+                    image:
+                        type: mediafinder
+
+# FAQ
+        # faq:
+        #     type: repeater
+        #     prompt: Yeni sual-cavab əlavə et
+        #     tab: FAQ
+        #     form:
+        #         fields:
+        #             question:
+        #                 label: Sual
+        #             answer:
+        #                 label: Cavab
+                
+
+
+        counters:
+            tab: Metrik göstəricilər
+            type: repeater
+            prompt: Yeni metrik göstəricilər əlavə et
+            form:   
+                fields:
+                    number:
+                        label: Göstəricinin rəqəmləri
+                    text:
+                        label: Göstəricinin mətni
+
+
+
+        # team:
+        #     tab: Komanda
+        #     type: repeater
+        #     prompt: Yeni komanda üzvü əlavə et
+        #     form:
+        #         fields:
+        #             image:
+        #                 label: Komanda üzvün şəkili
+        #                 type: mediafinder
+        #             name:
+        #                 label: Komanda üzvün adı və soyadı
+        #             post:
+        #                 label: Komanda üzvün vəzifəsi
+        # docs:
+        #     tab: Sənədlər
+        #     type: repeater
+        #     prompt: Yeni sənəd əlavə et
+        #     form:
+        #         fields:
+        #             title:
+        #                 label: Sənədin adı
+        #             doc:
+        #                 label: Sənəd
+        #                 type: mediafinder
+
+        careers_description:
+            tab: Karyera
+            type: richeditor
+            span: storm
+            cssClass: col-md-12
+        careers:
+            tab: Karyera
+            type: repeater
+            prompt: Yeni vakansiya əlavə et
+            form:
+                fields:
+                    title:
+                        label: Vakansiyanın adı
+                    description:
+                        label: Vakansiyanın təsviri
+                        type: richeditor
+# Contacts        
+        telephone:
+            tab: Əlaqə
+            label: Telefon nömrəsi
+            span: storm
+            cssClass: col-md-6
+        pochta:
+            tab: Əlaqə
+            label: Elektron ünvan
+            span: storm
+            cssClass: col-md-6 
+
+
+
+        gmaps:
+            tab: Əlaqə
+            type: textarea
+            label: Google xəritə linki
+            span: storm
+            cssClass: col-md-12
+        socials:
+            tab: Əlaqə
+            type: repeater
+            prompt: Sosial şəbəkə əlavə et
+            form:
+                fields:
+                    name:
+                        label: Sosial şəbəkənin adı
+                        default: fab fa-
+                    url:
+                        label: Sosial şəbəkənin linki
+
+                    

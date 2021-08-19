@@ -1,0 +1,67 @@
+[Company]
+
+[mainContactForm]
+
+[Subscriptionform]
+
+[localePicker]
+forceUrl = 0
+
+[extendedLocalePicker]
+==
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ this.page.title }}- {{ company.name }}</title>
+
+  <link rel="stylesheet" href="{{ 'assets/css/style.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/responsive.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/font.css' | theme }}" />
+
+  <link rel="stylesheet" href="{{ 'assets/css/swiper-bundle.min.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/aos.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/lightgallery.min.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.min.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/owl.theme.default.css' | theme }}" />
+  <link rel="stylesheet" href="{{ 'assets/css/all.min.css' | theme }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ 'assets/images/fav-icon.png' | theme }}" type="image/x-icon" />
+</head>
+
+<body>
+  <!---MAIN WRAPPER START
+                    ==================================-->
+  <div id="main-wrapper" class="clearfix">
+
+
+    <!---CONTENT START
+						==================================-->
+      {% page %}
+    <!--- CONTENT END -->
+
+  </div>
+  <!--- MAIN WRAPPER END -->
+
+  <!-- Footer Scripts 
+                        =====================-->
+
+  <!-- External -->
+  <script src="{{ 'assets/js/jquery-3.6.0.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/aos.js' | theme }}"></script>
+  <script src="{{ 'assets/js/jquery.smartmenus.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/swiper-bundle.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/lightgallery.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/owl.carousel.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/isotope.js' | theme }}"></script>
+  <script src="{{ 'assets/js/imagesloaded.pkgd.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/jquery.sticky-kit.min.js' | theme }}"></script>
+  <script src="{{ 'assets/js/main.js' | theme }}"></script>
+</body>
+
+</html>
