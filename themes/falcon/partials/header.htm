@@ -1,48 +1,44 @@
-    <!---HEADER START
-						==================================-->
-    <header id="header" class="main-header">
-      <nav class="main-nav nav-expanded">
-        <div class="container">
-          <div class="left-nav">
-            <div class="nav-brand">
-              <a href="index.html">
-                <img src="{{ 'assets/images/logo.png' | theme }}" alt="navbar-logo" />
-              </a>
-            </div>
+<header id="header" class="main-header">
+  <nav class="main-nav nav-white nav-white-expand">
+    <div class="container">
+      <div class="left-nav">
+        <div class="nav-brand nav-white-logo">
+          <a href="{{ 'home' | page }}">
+            <img src="images/logo-black@2x.png" alt="navbar-logo" width="180" height="30" />
+          </a>
+        </div>
 
-            <input id="main-menu-state" type="checkbox" />
-            <label class="main-menu-btn" for="main-menu-state">
-              <span class="main-menu-btn-icon"></span> Toggle main menu
-              visibility
-            </label>
-            <ul id="main-menu" style="width: 100%;">
-              <li class="menu-item">
-                <a class="nav-link" href="{{ 'home' | page }}">{{ 'Əsas səhifə' |_ }}</a>
-              </li>
-              <li class="menu-item">
-                <a class="nav-link" href="{{ 'home' | page }}#about-us">{{ 'Haqqımızda' |_ }}</a>
-              </li>
-              <li class="menu-item">
-                <a class="nav-link" href="{{ 'home' | page }}#mission">{{ 'Missiya' |_ }}</a>
-              </li>
-              <li class="menu-item">
-                <a class="nav-link" href="{{ 'blog' | page }}">{{ 'Bloq' |_ }}</a>
-              </li>
-              <li class="menu-item">
-                <a class="nav-link" href="{{ 'home' | page }}#contacts">{{ 'Əlaqə' |_ }}</a>
-              </li>
-            </ul>
-          </div>
+        <input id="main-menu-state" type="checkbox" />
+        <label class="main-menu-btn white" for="main-menu-state">
+          <span class="main-menu-btn-icon-gray"></span>Toggle main menu
+          visibility
+        </label>
+        <ul id="main-menu" class="bg-white">
+          <li class="menu-item-white">
+            <a class="nav-link-black" href="index.html">{{ 'Əsas səhifə' |_ }}</a>
+          </li>
+          <li class="menu-item-white">
+            <a class="nav-link-black" href="about.html">{{ 'Haqqımızda' |_ }}</a>
+          </li>
+          <li class="menu-item-white">
+            <a class="nav-link-black" href="service.html">{{ 'Dəyərlərimiz' |_ }}</a>
+          </li>
+          <li class="menu-item-white">
+            <a class="nav-link-black" href="blog.html">{{ 'Bloq' |_ }}</a>
+          </li>
+          <li class="menu-item-white">
+            <a class="nav-link-black" href="contact.html">{{ 'Əlaqə' |_ }}</a>
+          </li>
+        </ul>
+      </div>
 
-          <div class="right-nav">
-            <div class="nav-menu">
-              <div class="contact-button">
-                {% component 'extendedLocalePicker' %}
-              </div>
-            </div>
+      <div class="right-nav">
+        <div class="nav-menu white-nav">
+          <div class="contact-button">
+            {% component 'extendedLocalePicker' %}
           </div>
         </div>
-      </nav>
-      <!-- end navbar -->
-    </header>
-    <!---EMD HEADER-->
+      </div>
+    </div>
+  </nav>
+</header>

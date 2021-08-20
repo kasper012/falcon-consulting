@@ -1,6 +1,18 @@
-title = "Home"
 url = "/"
 layout = "main"
+title = "Home"
+
+[viewBag]
+localeTitle[en] = "Home"
+localeTitle[ru] = "Главная"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 1
+noPostsMessage = "Xəbər tapılmadı"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
 ==
 {% partial 'home-header' %}
 
@@ -90,7 +102,7 @@ layout = "main"
           <div class="row clearfix">
             <div class="column column-2 about-section">
               <div class="about-section-title">
-                <h2 class="text-blue">The Corporate Consulting Edge.</h2>
+                <h2 class="text-blue">{{ 'Falcon Group Consulting' |_ }}</h2>
                 <hr class="left-hr" />
                 <p class="sub-title">
                 </p>

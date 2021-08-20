@@ -1,9 +1,12 @@
-url = "/blog/:page?"
+url = "blog/kateqoriya/:slug/:page?"
 layout = "main"
-title = "Blog"
+title = "Kateqoriya"
 
 [viewBag]
-localeTitle[ru] = "Блог"
+localeUrl[en] = "blog/category/:slug/:page?"
+localeUrl[ru] = "blog/kateqoriya/:slug/:page?"
+localeTitle[en] = "Category"
+localeTitle[ru] = "Категория"
 
 [blogCategories]
 slug = "{{ :slug }}"
@@ -19,8 +22,8 @@ sortOrder = "published_at desc"
 categoryPage = "category"
 postPage = "post"
 ==
-{% set posts = blogPosts.posts %}
 {% partial 'header' %}
+{% set posts = blogPosts.posts %}
 <section class="Blogs">
     <div class="container">
       <div class="row clearfix">
@@ -60,15 +63,15 @@ postPage = "post"
               <div class="column column-1 pagination-wrapper">
                 <div class="pagination">
                 {% if posts.currentPage != 1 %}
-                    <a href="{{ 'blog' | page({page:posts.currentPage-1}) }}" class="button style-pagination">{{ 'Əvvəlki' |_}}</a>
+                    <a href="{{ 'category' | page({page:posts.currentPage-1}) }}" class="button style-pagination">{{ 'Əvvəlki' |_}}</a>
                 {% endif %}
                 {% for page in 1..posts.lastPage %}
-                    <a href="{{ 'blog' | page({page:page}) }}" class="{{ posts.currentPage == page ? 'current' : null }} button style-pagination left-border-none ">
+                    <a href="{{ 'category' | page({page:page}) }}" class="{{ posts.currentPage == page ? 'current' : null }} button style-pagination left-border-none ">
                     {{ page }}
                     </a>
                 {% endfor %}
                 {% if posts.currentPage != posts.lastPage %}
-                    <a href="{{ 'blog' | page({page:posts.currentPage+1}) }}" class="button style-pagination left-border-none">
+                    <a href="{{ 'category' | page({page:posts.currentPage+1}) }}" class="button style-pagination left-border-none">
                     {{ 'Növbəti' |_ }}
                     </a>
                 {% endif %}
@@ -87,6 +90,7 @@ postPage = "post"
                   <span class="side-title-text">{{ 'Kateqoriyalar' |_ }}</span>
                 </h5>
               </div>
+              
               {% component 'blogCategories' %}
 
 

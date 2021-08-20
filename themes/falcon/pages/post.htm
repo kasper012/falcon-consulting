@@ -1,4 +1,125 @@
-title = "Post"
-url = "/post"
+url = "/post/:slug"
 layout = "main"
+title = "Post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "category"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "category"
 ==
+{% partial 'header' %}
+<div id="content" class="content-wrapper clearfix">
+    <!---BLOG START
+                  ==================================-->
+    <section class="BlogPost">
+      <div class="container">
+        <div class="row blogPost-wrapper">
+          <div class="column column-75 clearfix">
+            <div class="blog-single content-section blog-wrapper">
+              <div class="blogPost-img-wrapper">
+                <div class="blogPost-img img-zoom-wrapper">
+                {% for image in post.featured_images|slice(0,1) %}
+                    <img src="{{image.path}}" alt="blogpost-title" class="res-img" />
+                {% endfor %}
+
+                </div>
+                <div class="blogPost-category d-flex justify-content-between">
+                    {% for category in post.categories %}
+                    <p class="mx-3">{{ category.name }}</p>
+                    {% endfor %}
+
+
+                </div>
+              </div>
+              <div class="blogPost-title-wrapper">
+                <h1 class="blogPost-title">{{ post.title }}</h1>
+                <div class="the-author">
+                  <span class="post-date"> {{ post.published_at |date('d/m/Y') }}</span>
+                </div>
+              </div>
+              <div class="blogPost-body">
+                {{ post.content | raw }}
+              </div>
+              <div class="blogPost-tag-wrapper">
+
+              </div>
+
+            </div>
+          </div>
+          <div class="column column-25 sidebar-wrapper">
+            <div class="blogPost-side-menu">
+
+              <div class="categories">
+                <div class="sideBar-title">
+                  <h5 class="text-bold">
+                    <span class="side-icon">//</span>
+                    <span class="side-title-text">{{ 'Kateqoriyalar' |_ }}</span>
+                  </h5>
+                </div>
+                {% component 'blogCategories' %}
+              </div>
+              <div class="follow-us">
+                <div class="sideBar-title">
+                  <h5 class="text-bold">
+                    <span class="side-icon">//</span>
+                    <span class="side-title-text">FOLLOW US</span>
+                  </h5>
+                </div>
+                <div class="sosmed-icon-wrapper">
+                  <a href="index.html" target="_blank">
+                    <div class="icon-wrapper">
+                      <i class="fab fa-facebook-f"></i>
+                    </div>
+                  </a>
+                  <a href="index.html" target="_blank">
+                    <div class="icon-wrapper">
+                      <i class="fab fa-twitter"></i>
+                    </div>
+                  </a>
+                  <a href="index.html" target="_blank">
+                    <div class="icon-wrapper">
+                      <i class="fab fa-linkedin-in"></i>
+                    </div>
+                  </a>
+                  <a href="index.html" target="_blank">
+                    <div class="icon-wrapper">
+                      <i class="fab fa-instagram"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--END BLOG POST-->
+
+    <!---NEWSLETTER START
+          ==================================-->
+    <section class="Newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="column column-2 newsletter-text">
+            <div class="newsletter-title clearfix">
+              <h3>Newsletter</h3>
+              <p>Keep up to date - get updates with latest topics</p>
+            </div>
+          </div>
+          <div class="column column-2 newsletter-form-input">
+            <div class="newsletter-form clearfix">
+              <form>
+                <input type="text" placeholder="Your Email" class="newsletter-input" />
+              </form>
+              <button class="button style-6">Sign me up!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---END NEWSLETTER-->
+  </div>

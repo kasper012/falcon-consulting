@@ -3295,3 +3295,13 @@ blockquote::before {
 .services-card {
   align-items: center !important;
 }
+
+.mx-5 {
+  margin: 0 3rem !important;
+}
+.mx-4 {
+  margin: 0 2rem !important;
+}
+.mx-3 {
+  margin: 0 1rem !important;
+}
