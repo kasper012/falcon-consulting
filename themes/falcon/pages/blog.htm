@@ -49,7 +49,7 @@ postPage = "post"
                       {{ post.excerpt }}
                   </p>
                   <div class="card-date">
-                    <small>{{ post.published_at |date('d') }} {{ post.published_at |date('M') }} {{ post.published_at|date('Y') }}</small>
+                    <small>{{ post.published_at|date('d/mY') }}</small>
                   </div>
                 </div>
               </div>
@@ -126,3 +126,4 @@ postPage = "post"
       </div>
     </div>
   </section>
+  {% partial 'footer' %}

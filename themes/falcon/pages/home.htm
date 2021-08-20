@@ -8,7 +8,7 @@ localeTitle[ru] = "Главная"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 1
+postsPerPage = 4
 noPostsMessage = "Xəbər tapılmadı"
 sortOrder = "published_at desc"
 categoryPage = "blog"
@@ -100,14 +100,13 @@ postPage = "post"
       <section class="About">
         <div class="container">
           <div class="row clearfix">
-            <div class="column column-2 about-section">
-              <div class="about-section-title">
-                <h2 class="text-blue">{{ 'Falcon Group Consulting' |_ }}</h2>
+            <div class="column column-2 about-section d-flex align-items-center">
+              <div class="about-section-title ">
+                <h2 class="text-blue">{{ 'Missiyamız' |_ }}</h2>
                 <hr class="left-hr" />
                 <p class="sub-title">
                 </p>
                 <p class="text-gray about-desc">
-                  {{ company.about | raw }}
                 </p>
               </div>
             </div>
@@ -142,10 +141,12 @@ postPage = "post"
             <div class="column column-2 about-img-tablet" data-aos="fade-right" data-aos-duration="3100">
               <img class="images" src="{{ 'assets/images/image3-1.jpg' | theme }}" alt="img" />
             </div>
-            <div class="column column-2 about-text-wrapper">
+            <div class="column column-2 about-text-wrapper d-flex align-items-center">
               <div class="row about-text">
                 <p class="text-gray">
-                  {{ company.excerpt | raw }}
+                  {{ 'Idarəetmə praktikasını
+                  inkişaf etdirməklə tərəqqiyə töhfə
+                  verməkdədir.' |_ }}
                 </p>
                 <div class="about-button" data-aos="fade-up" data-aos-duration="3100">
                   <a href="about.html" class="button style-2"> Həll sifariş edin</a>
@@ -157,30 +158,13 @@ postPage = "post"
       </section>
       <!---END ABOUT-->
 
-      <!---Mission START
-				==================================-->
-        <section class="Experience">
-          <div class="container">
-            <div class="row">
-              <div class="column column-1 experience-body">
-                <h3 class="text-white">
-                  {{ 'Missiyamız' |_ }}:
-                </h3>
-                <p>
-                  {{ 'idarəetmə praktikasını inkişaf etdirməklə tərəqqiyə töhfə vermək' |_ }}
-                </p>
 
-              </div>
-            </div>
-          </div>
-        </section>
-        <!---END EXPRERIENCE-->
 
       <!---Values START-->
       <section class="Services">
         <div class="container">
           <div class="row">
-            <div class="services-text">
+            <div class="services-text d-flex align-items-center">
               <div class="services-title">
                 <h3 class="text-blue text-bold">
                   {{ 'Dəyərlərimiz' }}
@@ -258,9 +242,271 @@ postPage = "post"
       <!---END SERVICES-->
 
       <!-- !!! CONSULTING AREA -->
+      <section class="Services-list">
+        <div class="container">
+          <div class="row">
+            <div class="testimoni-title">
+              <h3 class="text-blue">Məsləhət xidmətlərimizin sahələri</h3>
+              <hr class="left-hr" />
+              <p class="letter-space5">İdarəetmə</p>
+            </div>
+          </div>
+          <div class="row service-loop-wrap clearfix">
+            <div class="column column-3 service-card-tablet">
+              <div class="service-cards card">
+                <div class="card-img-top img-zoom-wrapper">
+                  <img class="service-card-img card-img" src="{{ 'assets/images/consultation-PHUWVCP-500x300@2x.jpg' | theme }}"
+                    alt="Business Consulting" />
+                </div>
+                <div class="card-body service-card-body">
+                  <div class="serviceman-name">
+                    <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </div>
+                  <div class="service-card-title">
+                    <a href="singleService.html">
+                      <h3 class="text-bold">BUSINESS CONSULTING</h3>
+                    </a>
+                  </div>
+                  <div class="service-card-desc">
+                    <p>
+                      We live in the world of data now; data allows us to make
+                      realistic decisions about the future. No financial...
+                    </p>
+                    <div class="service-card-button">
+                      <a href="singleService.html" class="button style-8">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column-3 service-card-tablet">
+              <div class="service-cards card">
+                <div class="card-img-top img-zoom-wrapper">
+                  <img class="service-card-img card-img" src="{{ 'assets/images/business-consultation-PQQA29L-500x300@2x.jpg' | theme }}"
+                    alt="Market Research" />
+                </div>
+                <div class="card-body service-card-body">
+                  <div class="serviceman-name">
+                    <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </div>
+                  <div class="service-card-title">
+                    <a href="singleService.html">
+                      <h3 class="text-bold">MARKET RESEARCH</h3>
+                    </a>
+                  </div>
+                  <div class="service-card-desc">
+                    <p>
+                      We live in the world of data now; data allows us to make
+                      realistic decisions about the future. No financial...
+                    </p>
+                    <div class="service-card-button">
+                      <a href="https://html.themesawesome.com/konsultanhtml/singleservice.html" class="button style-8">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column-3 service-card-tablet">
+              <div class="service-cards card">
+                <div class="card-img-top img-zoom-wrapper">
+                  <img class="service-card-img card-img" src="{{ 'assets/images/risk-management-500x300@2x.jpg' | theme }}"
+                    alt="Risk Management" />
+                </div>
+                <div class="card-body service-card-body">
+                  <div class="serviceman-name">
+                    <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </div>
+                  <div class="service-card-title">
+                    <a href="singleService.html">
+                      <h3 class="text-bold">RISK MANAGEMENT</h3>
+                    </a>
+                  </div>
+                  <div class="service-card-desc">
+                    <p>
+                      We live in the world of data now; data allows us to make
+                      realistic decisions about the future. No financial...
+                    </p>
+                    <div class="service-card-button">
+                      <a href="singleService.html" class="button style-8">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+          </div>
+
+<!-- divider -->
+          <div class="row">
+            <div class="testimoni-title">
+              <hr class="left-hr" />
+              <p class="letter-space5">Daxili kommunikasiyalar</p>
+            </div>
+          </div>
+          <div class="row service-loop-wrap clearfix">
+            <div class="column column-3 service-card-tablet">
+              <div class="service-cards card">
+                <div class="card-img-top img-zoom-wrapper">
+                  <img class="service-card-img card-img" src="{{ 'assets/images/consultation-PHUWVCP-500x300@2x.jpg' | theme }}"
+                    alt="Business Consulting" />
+                </div>
+                <div class="card-body service-card-body">
+                  <div class="serviceman-name">
+                    <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </div>
+                  <div class="service-card-title">
+                    <a href="singleService.html">
+                      <h3 class="text-bold">BUSINESS CONSULTING</h3>
+                    </a>
+                  </div>
+                  <div class="service-card-desc">
+                    <p>
+                      We live in the world of data now; data allows us to make
+                      realistic decisions about the future. No financial...
+                    </p>
+                    <div class="service-card-button">
+                      <a href="singleService.html" class="button style-8">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column-3 service-card-tablet">
+              <div class="service-cards card">
+                <div class="card-img-top img-zoom-wrapper">
+                  <img class="service-card-img card-img" src="{{ 'assets/images/business-consultation-PQQA29L-500x300@2x.jpg' | theme }}"
+                    alt="Market Research" />
+                </div>
+                <div class="card-body service-card-body">
+                  <div class="serviceman-name">
+                    <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </div>
+                  <div class="service-card-title">
+                    <a href="singleService.html">
+                      <h3 class="text-bold">MARKET RESEARCH</h3>
+                    </a>
+                  </div>
+                  <div class="service-card-desc">
+                    <p>
+                      We live in the world of data now; data allows us to make
+                      realistic decisions about the future. No financial...
+                    </p>
+                    <div class="service-card-button">
+                      <a href="https://html.themesawesome.com/konsultanhtml/singleservice.html" class="button style-8">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column-3 service-card-tablet">
+              <div class="service-cards card">
+                <div class="card-img-top img-zoom-wrapper">
+                  <img class="service-card-img card-img" src="{{ 'assets/images/risk-management-500x300@2x.jpg' | theme }}"
+                    alt="Risk Management" />
+                </div>
+                <div class="card-body service-card-body">
+                  <div class="serviceman-name">
+                    <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </div>
+                  <div class="service-card-title">
+                    <a href="singleService.html">
+                      <h3 class="text-bold">RISK MANAGEMENT</h3>
+                    </a>
+                  </div>
+                  <div class="service-card-desc">
+                    <p>
+                      We live in the world of data now; data allows us to make
+                      realistic decisions about the future. No financial...
+                    </p>
+                    <div class="service-card-button">
+                      <a href="singleService.html" class="button style-8">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- END CONSULTING AREA -->
       <!-- !!! TRAINNING -->
+      <section class="Teams bg-light-blue team-about">
+        <div class="container">
+          <div class="row clear-fix">
+            <div class="team-title">
+              <h3 class="text-blue text-center text-bold">
+                Təlimlərimiz
+              </h3>
+              <hr class="center-hr" />
+            </div>
+            <div class="column column-1 team-list d-flex justify-content-center">
+              <div class="column column-4 about-team-wrapper">
+                <div class="team-img-wrapper">
+                  <div class="team-img">
+                    <img class="res-img" src="{{ 'assets/images/t1-370x370-500x500.jpg' | theme }}" alt="team-images" />
+                    <div class="overlay">
+                      <div class="overlay-body">
+                        <p class="text-white text-center">
+                          At vero eos et accusamus et iusto odio dignissimos
+                          ducimus qui blanditiis praesentium voluptatum
+                        </p>
 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-desc">
+                    <p class="text-blue team-name d-flex justify-content-end">İdarəetmə bacarıqları</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column column-4 about-team-wrapper">
+                <div class="team-img-wrapper">
+                  <div class="team-img">
+                    <img class="res-img" src="{{ 'assets/images/t1-370x370-500x500.jpg' | theme }}" alt="team-images" />
+                    <div class="overlay">
+                      <div class="overlay-body">
+                        <p class="text-white text-center">
+                          At vero eos et accusamus et iusto odio dignissimos
+                          ducimus qui blanditiis praesentium voluptatum
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-desc">
+                    <p class="text-blue team-name d-flex justify-content-end">İdarəetmə bacarıqları</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column column-4 about-team-wrapper">
+                <div class="team-img-wrapper">
+                  <div class="team-img">
+                    <img class="res-img" src="{{ 'assets/images/t1-370x370-500x500.jpg' | theme }}" alt="team-images" />
+                    <div class="overlay d-flex align-items-center">
+                      <div class="overlay-body">
+                        <p class="text-white text-center">
+                          At vero eos et accusamus et iusto odio dignissimos
+                          ducimus qui blanditiis praesentium voluptatum
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-desc">
+                    <p class="text-blue team-name d-flex justify-content-end">İdarəetmə bacarıqları</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- END TRAINING -->
       <!---BLOG START
 				==================================-->
         <section class="Blog">
@@ -269,117 +515,47 @@ postPage = "post"
               <div class="blog-title-wrap">
                 <div class="column column-2 blog-index-tablet">
                   <div class="blog-title">
-                    <p class="title-text letter-space5">blog post</p>
-                    <h3 class="text-blue">Our Latest News.</h3>
+                    <p class="title-text letter-space5"></p>
+                    <h3 class="text-blue">{{ 'Bloq' |_ }}</h3>
                     <hr class="left-hr" />
                     <p class="text-gray">
-                      Sed ut perspiciatis unde omnis iste natus sit voluptatem
-                      accusantium doloremque laudantium.
                     </p>
                   </div>
                 </div>
                 <div class="column column-2 blog-index-tablet">
                   <div class="blog-button" data-aos="fade-up" data-aos-duration="3500">
-                    <a class="button style-2" href="blog.html"> View All News </a>
+                    <a class="button style-2" href="{{ 'blog' | page }}"> {{ 'Bütün məqalələrə bax' |_ }} </a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="blog-loop">
-                <div class="column column-4 blog-list-wrapper">
+                {% for post in blogPosts.posts %}
+                <div class="column column-3 blog-list-wrapper">
                   <div class="blog-card card">
                     <div class="card-img-wrapper">
                       <div class="card-img-top img-zoom-wrapper">
-                        <img class="res-img card-img" src="images/blog1-331x219@2x.jpg" alt="card-img" />
+                        <img class="res-img card-img" src="{{ post.featured_images[0].path }}" alt="card-img" />
                       </div>
                       <div class="card-category">
-                        <p>engineering</p>
+                        <p>{% for category in post.categories %}{{ category.name  }}{% endfor %}</p>
                       </div>
                     </div>
                     <div class="card-body">
                       <p class="card-title">
-                        <a href="singlePost.html">Lorem ipsum dolor sit</a>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
                       </p>
                       <p class="card-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut...
+                        {{ post.excerpt | raw }}
                       </p>
                       <div class="card-date">
-                        <small>September 25, 2018</small>
+                        <small>{{ post.published_at|date('d/m/Y') }}</small>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="column column-4 blog-list-wrapper">
-                  <div class="blog-card card">
-                    <div class="card-img-wrapper">
-                      <div class="card-img-top img-zoom-wrapper">
-                        <img class="res-img card-img" src="images/blog2-1-331x219@2x.jpg" alt="card-img" />
-                      </div>
-                      <div class="card-category">
-                        <p>marketing</p>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <p class="card-title">
-                        <a href="singlePost.html">Proin In Orci Quis Elit</a>
-                      </p>
-                      <p class="card-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut...
-                      </p>
-                      <div class="card-date">
-                        <small>September 25, 2018</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column column-4 blog-list-wrapper">
-                  <div class="blog-card card">
-                    <div class="card-img-wrapper">
-                      <div class="card-img-top img-zoom-wrapper">
-                        <img class="res-img card-img img-zoom-wrapper" src="images/blog5-1-331x219@2x.jpg"
-                          alt="card-img" />
-                      </div>
-                      <div class="card-category">
-                        <p>resource</p>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <p class="card-title">
-                        <a href="singlePost.html">Sed Varius Eros Eu Ac</a>
-                      </p>
-                      <p class="card-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut...
-                      </p>
-                      <div class="card-date">
-                        <small>September 25, 2018</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column column-4 blog-list-wrapper">
-                  <div class="blog-card card">
-                    <div class="card-img-wrapper">
-                      <div class="card-img-top img-zoom-wrapper">
-                        <img class="res-img card-img" src="images/blog4-331x219@2x.jpg" alt="card-img" />
-                      </div>
-                      <div class="card-category">
-                        <p>business</p>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <p class="card-title">
-                        <a href="singlePost.html">Curabitur Augue Eros</a>
-                      </p>
-                      <p class="card-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut...
-                      </p>
-                      <div class="card-date">
-                        <small>September 25, 2018</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -393,50 +569,28 @@ postPage = "post"
             <div class="row">
               <div class="column column-4 team-section-desc">
                 <div class="team-title">
-                  <p class="text-gray letter-space5">best team</p>
-                  <h3 class="text-blue">Our Advisors</h3>
+                  <p class="text-gray letter-space5"></p>
+                  <h3 class="text-blue">{{ 'Komandamız' |_ }}</h3>
                   <hr class="left-hr mb-3" />
                 </div>
                 <div class="team-body">
                   <p class="text-gray">
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium.
                   </p>
-                  <a href="about.html">View All Team</a>
                 </div>
               </div>
               <div class="team-list">
                 <div class="column column-3 team-wrapper">
                   <div class="team-img-wrapper">
-                    <div class="team-img">
-                      <img class="res-img" src="images/t2-370x370-500x500.jpg" alt="team-images" />
+                    <div class="team-img team-img-non-hover">
+                      <img class="res-img" src="{{ 'assets/images/t2-370x370-500x500.jpg' | theme }}" alt="team-images" />
                       <div class="overlay">
                         <div class="overlay-body">
                           <p class="text-white">
-                            At vero eos et accusamus et iusto odio dignissimos
-                            ducimus qui blanditiis praesentium voluptatum
                           </p>
-                          <div class="overlay-icon row">
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-twitter"></i>
-                              </div>
-                            </a>
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-facebook-f"></i>
-                              </div>
-                            </a>
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-linkedin-in"></i>
-                              </div>
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="team-desc">
+                    <div class="team-desc d-flex justify-content-center" style="flex-direction: column;">
                       <p class="team-name">Joye Byoend</p>
                       <p class="team-job">Chief Operating</p>
                     </div>
@@ -444,76 +598,39 @@ postPage = "post"
                 </div>
                 <div class="column column-3 team-wrapper">
                   <div class="team-img-wrapper">
-                    <div class="team-img">
-                      <img class="res-img" src="images/t1-370x370-500x500.jpg" alt="team-images" />
+                    <div class="team-img team-img-non-hover">
+                      <img class="res-img" src="{{ 'assets/images/t2-370x370-500x500.jpg' | theme }}" alt="team-images" />
                       <div class="overlay">
                         <div class="overlay-body">
                           <p class="text-white">
-                            At vero eos et accusamus et iusto odio dignissimos
-                            ducimus qui blanditiis praesentium voluptatum
                           </p>
-                          <div class="overlay-icon row">
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-twitter"></i>
-                              </div>
-                            </a>
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-facebook-f"></i>
-                              </div>
-                            </a>
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-linkedin-in"></i>
-                              </div>
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="team-desc">
-                      <p class="team-name">Charles Leemen</p>
-                      <p class="team-job">CEO</p>
+                    <div class="team-desc d-flex justify-content-center" style="flex-direction: column;">
+                      <p class="team-name">Joye Byoend</p>
+                      <p class="team-job">Chief Operating</p>
                     </div>
                   </div>
                 </div>
                 <div class="column column-3 team-wrapper">
                   <div class="team-img-wrapper">
-                    <div class="team-img">
-                      <img class="res-img" src="images/t4-370x370-500x500.jpg" alt="team-images" />
+                    <div class="team-img team-img-non-hover">
+                      <img class="res-img" src="{{ 'assets/images/t2-370x370-500x500.jpg' | theme }}" alt="team-images" />
                       <div class="overlay">
                         <div class="overlay-body">
                           <p class="text-white">
-                            At vero eos et accusamus et iusto odio dignissimos
-                            ducimus qui blanditiis praesentium voluptatum
                           </p>
-                          <div class="overlay-icon row">
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-twitter"></i>
-                              </div>
-                            </a>
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-facebook-f"></i>
-                              </div>
-                            </a>
-                            <a href="index.html" target="_blank">
-                              <div class="icon">
-                                <i class="fab fa-linkedin-in"></i>
-                              </div>
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="team-desc">
-                      <p class="team-name">Lussy Anderson</p>
-                      <p class="team-job">Founder</p>
+                    <div class="team-desc d-flex justify-content-center" style="flex-direction: column;">
+                      <p class="team-name">Joye Byoend</p>
+                      <p class="team-job">Chief Operating</p>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -528,12 +645,10 @@ postPage = "post"
               <div class="partner-body">
                 <div class="partner-text">
                   <div class="partner-title">
-                    <p class="text-gray letter-space5">PARTNERS</p>
+                    <p class="text-gray letter-space5"></p>
                   </div>
-                  <h3 class="text-blue text-bold">Our Partners</h3>
+                  <h3 class="text-blue text-bold">Müştərilərimiz</h3>
                   <p class="partner-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor
                   </p>
                   <hr class="flex-hr" />
                 </div>
@@ -573,5 +688,5 @@ postPage = "post"
         </div>
       </section>
       <!--END PARTNER-->
-
+{% partial 'footer' %}
   </div>

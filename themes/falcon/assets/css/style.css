@@ -3288,12 +3288,21 @@ blockquote::before {
   justify-content: space-between !important;
 }
 
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
 .align-items-center {
   align-items: center !important;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 .services-card {
   align-items: center !important;
+  min-width: 300px;
 }
 
 .mx-5 {
@@ -3304,4 +3313,12 @@ blockquote::before {
 }
 .mx-3 {
   margin: 0 1rem !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.team-img-non-hover:hover .overlay {
+  opacity: 0;
 }

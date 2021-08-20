@@ -1,134 +1,78 @@
-
     <!---FOOTER START
-==================================-->
-<footer id="footer" class="footer clearfix">
-    <div class="footer-widget">
-        <div class="container">
-        <div class="row clearfix">
-            <div class="column column-4 footer-widget-component">
-            <a href="index.html">
-                <img class="footer-logo res-img" src="{{ 'assets/images/logo.png' | theme }}" alt="footer-logo" />
-            </a>
-            <p class="footer-text footer-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                dolore.
-            </p>
-            <a href="blog.html" class="button style-7">Get Location</a>
-            </div>
-            <div class="column column-4 footer-widget-component">
-            <p class="footer-title text-white">get in touch</p>
-            <hr class="left-hr" />
-            <p class="footer-text"><b>+62 828 111 96 75</b></p>
-            <p class="footer-text">
-                Jl. Maleer Indah II, Maleer, Batununggal, Kota Bandung, Jawa
-                Barat 40274.
-            </p>
-            <p class="footer-text footer-email">consultant@contact.com</p>
-            <p class="footer-text footer-email">info@consultant.com</p>
-            </div>
-            <div class="column column-4 footer-widget-component">
-            <p class="footer-title text-white">latest news</p>
-            <hr class="left-hr" />
-            <div class="footer-news-wrapper clear-fix">
-                <div class="row footer-news-item mt-2">
-                <div class="img-zoom-wrapper">
-                    <a href="singlePost.html">
-                    <img class="footer-news-img" src="{{ 'assets/images/blog1-85x85.jpg" alt="footer-news-img" />
-                    </a>
-                </div>
-                <div class="footer-news-text">
-                    <a class="footer-news-title" href="singlePost.html">Suspend Ullam</a>
-                    <p class="footer-news-date footer-text">
-                    September 25, 2018
-                    </p>
-                </div>
-                </div>
-                <div class="row footer-news-item mt-2">
-                <div class="img-zoom-wrapper">
-                    <a href="singlePost.html">
-                    <img class="footer-news-img" src="{{ 'assets/images/blog2-1-85x85.jpg" alt="footer-news-img" />
-                    </a>
-                </div>
-                <div class="footer-news-text">
-                    <a class="footer-news-title" href="singlePost.html">Proin In Orci Quis Elit</a>
-                    <p class="footer-news-date footer-text">
-                    September 25, 2018
-                    </p>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="column column-4 footer-widget-component">
-            <p class="footer-title text-white">Follow Us</p>
-            <hr class="left-hr" />
-            <p class="footer-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                dolore.
-            </p>
-            <div class="footer-icon-wrapper">
-                <a href="index.html" target="_blank">
-                <div class="footer-icon">
-                    <i class="fab fa-twitter"></i>
-                </div>
-                </a>
-                <a href="index.html" target="_blank">
-                <div class="footer-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </div>
-                </a>
-                <a href="index.html" target="_blank">
-                <div class="footer-icon">
-                    <i class="fab fa-google-plus-g"></i>
-                </div>
-                </a>
-                <a href="index.html" target="_blank">
-                <div class="footer-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </div>
-                </a>
-                <a href="index.html" target="_blank">
-                <div class="footer-icon">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                </a>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+				==================================-->
+                <footer id="footer" class="footer clearfix">
+                    <div class="footer-widget">
+                      <div class="container">
+                        <div class="row clearfix">
+                          <div class="column column-3 footer-widget-component">
+                            <a href="index.html">
+                              <img class="footer-logo res-img" src="images/logo.png" alt="footer-logo" />
+                            </a>
+                            <p class="footer-text footer-desc">
+                            </p>
+                          </div>
+                          <div class="column column-3 footer-widget-component">
+                            <p class="footer-title text-white">{{ 'Əlaqə saxlayın' |_ }}</p>
+                            <hr class="left-hr" />
+                            <p class="footer-text"><b>{{ company.telephone }}</b></p>
+                            <p class="footer-text">
+                                {{ company.address }}
+                            </p>
+                            <p class="footer-text footer-email">{{ company.pochta }}</p>
+ 
+                          </div>
 
-    <div class="footer-bottom clear-fix">
-        <div class="container">
-        <div class="row clearfix">
-            <div class="footer-copyright column column-2">
-            &copy; Copyright <span id="year"></span>,Built by&nbsp;<a href="https://themesawesome.com/"
-                class="text-green">Themes
-                Awesome</a>
-            </div>
-            <div class="column column-2 footer-nav">
-            <div class="footer-menu-wrapper">
-                <div class="footer-menu">
-                <a class="footer-link" href="index.html">Home</a>
-                </div>
-                <div class="footer-menu">
-                <a class="footer-link" href="service.html">Services</a>
-                </div>
-                <div class="footer-menu">
-                <a class="footer-link" href="about.html">About</a>
-                </div>
-                <div class="footer-menu">
-                <a class="footer-link" href="blog.html">Blog</a>
-                </div>
-                <div class="footer-menu">
-                <a class="footer-link" href="contact.html">Contact</a>
-                </div>
-                <div class="footer-menu">
-                <a class="footer-link" href="Appointment.html">Appointment</a>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-</footer>
-<!--END FOOTER-->
+                          <div class="column column-3 footer-widget-component">
+                            <p class="footer-title text-white">{{ 'Bizi izləyin' |_ }}</p>
+                            <hr class="left-hr" />
+
+                            <div class="footer-icon-wrapper">
+                            {% for social in company.socials %}
+                              <a href="{{ social.url }}" target="_blank">
+                                <div class="footer-icon">
+                                  <i class="{{ social.name }}"></i>
+                                </div>
+                              </a>
+                              {%  endfor%}
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="footer-bottom clear-fix">
+                      <div class="container">
+                        <div class="row clearfix">
+                          <div class="footer-copyright column column-2">
+                            &copy;<span id="year"></span> {{ 'Veb-sayt &nbsp;<a href="https://studio.gadimlie.com/"
+                              class="text-green">Gadimlie Studio</a> tərəfindən hazırlanıb' |_ }}
+                          </div>
+                          <div class="column column-2 footer-nav">
+                            <div class="footer-menu-wrapper">
+                              <div class="footer-menu">
+                                <a class="footer-link" href="{{ 'home' | page }}">{{ 'Əsas səhifə' |_ }}</a>
+                              </div>
+
+                              <div class="footer-menu">
+                                <a class="footer-link" href="{{ 'home' | page }}">{{ 'Təlimlərimiz' |_ }}</a>
+                              </div>
+                              <div class="footer-menu">
+                                <a class="footer-link" href="{{ 'home' | page }}">{{ 'Bloq' |_ }}</a>
+                              </div>
+                              <div class="footer-menu">
+                                <a class="footer-link" href="{{ 'home' | page }}">{{ 'Komandamız' |_ }}</a>
+                              </div>
+                              <div class="footer-menu">
+                                <a class="footer-link" href="{{ 'home' | page }}">{{ 'Müştərilərimiz' |_ }}</a>
+                              </div>
+                              <div class="footer-menu">
+                                <a class="footer-link" href="{{ 'home' | page }}">{{ 'Əlaqə' |_ }}</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </footer>
+                  <!--END FOOTER-->
