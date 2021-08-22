@@ -1302,7 +1302,7 @@
     position: absolute;
     z-index: -1;
     padding: 45px 20px 0;
-    top: 50%;
+    top: 75%;
     width: -webkit-fill-available;
   }
 
@@ -2008,6 +2008,7 @@
     left: 0;
     transform: none;
     max-width: 50%;
+    height: 70px;
   }
 
   .main-menu-btn {
@@ -2017,6 +2018,7 @@
   .nav-expanded.open {
     height: 100%;
     position: fixed;
+    z-index: 100;
   }
 
   .main-nav #main-menu {
