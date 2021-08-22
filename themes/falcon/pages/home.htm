@@ -208,6 +208,24 @@ postPage = "post"
                   {% endfor %}
                 </div>
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
+                  {% for area in company.consulting_areas | slice(4,6) %}
+                  <div class="services-card">
+                    <div class="service-images">
+                      <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image "
+                        width="70" />
+                    </div>
+                    <div class="service-desc">
+                      <div class="services-card-body">
+                        <p class="card-title">{{ area.title }}</p>
+                        <p class="service-card-desc">
+                          {{ area.description | raw }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+                <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
                   {% for area in company.consulting_areas | slice(2,4) %}
                   <div class="services-card">
                     <div class="service-images">
@@ -223,7 +241,6 @@ postPage = "post"
                       </div>
                     </div>
                   </div>
-
                   {% endfor %}
                 </div>
               </div>
@@ -343,7 +360,7 @@ postPage = "post"
               <div class="column column-4 team-section-desc">
                 <div class="team-title">
                   <p class="text-gray letter-space5">{{ company.team_suptitle }}</p>
-                  <h3 class="text-blue">{{ company.team.title }}</h3>
+                  <h3 class="text-blue">{{ company.team_title }}</h3>
                   <hr class="left-hr mb-3" />
                 </div>
                 <div class="team-body">
@@ -452,7 +469,7 @@ postPage = "post"
                 <div class="column column-2 main-office">
                   <h2 class="mb-5">{{ company.address }}</h2>
                   <a class="appointment-telp mb-5" href="tel:{{ company.telephone }}">{{ company.telephone }}</a>
-                  <a class="text-green" href="mailto:{{ company.pochta }}">{{ company.pochta }}</a>
+                  <a class="text-green d-block" href="mailto:{{ company.pochta }}">{{ company.pochta }}</a>
                 </div>
 
               </div>
