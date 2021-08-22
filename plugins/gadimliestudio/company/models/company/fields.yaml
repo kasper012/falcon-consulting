@@ -172,17 +172,7 @@ tabs:
                         label: Təsvir
                         type: richeditor
 
-        values:
-            tab: Dəyərlərimiz
-            type: repeater
-            prompt: Yeni dəyər əlavə et
-            form:
-                fields:
-                    title:
-                        label: Başlıq
-                    image:
-                        label: Şəkil
-                        type: mediafinder
+    
         consulting_areas:
             tab: Məsləhət xidmətlərimizin sahələri
             type: repeater
