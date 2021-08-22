@@ -124,7 +124,7 @@ postPage = "post"
                       <div class="office-site-card office-site-card-custom ">
 
                         <div class="site-text">
-                          <p class="text-bold site-type">Peşəkarlıq</p>
+                          <p class="text-bold site-type">{{'Peşəkarlıq' |_}}</p>
                           <p class="site-address">
 
                           </p>
@@ -133,7 +133,7 @@ postPage = "post"
                       <div class="office-site-card office-site-card-custom ">
 
                         <div class="site-text">
-                          <p class="text-bold site-type">Vicdanlıq</p>
+                          <p class="text-bold site-type">{{'Vicdanlıq'|_}}</p>
                           <p class="site-address">
 
                           </p>
@@ -142,7 +142,7 @@ postPage = "post"
                       <div class="office-site-card office-site-card-custom ">
 
                         <div class="site-text">
-                          <p class="text-bold site-type">Məsuliyyətlik</p>
+                          <p class="text-bold site-type">{{'Məsuliyyətlik' |_}}</p>
                           <p class="site-address">
 
                           </p>
@@ -151,7 +151,7 @@ postPage = "post"
                       <div class="office-site-card office-site-card-custom ">
 
                         <div class="site-text">
-                          <p class="text-bold site-type">Davamlı özünüinkişaf</p>
+                          <p class="text-bold site-type">{{'Davamlı özünüinkişaf' |_}}</p>
                           <p class="site-address">
 
                           </p>
@@ -208,7 +208,7 @@ postPage = "post"
                   {% endfor %}
                 </div>
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  {% for area in company.consulting_areas | slice(4,6) %}
+                  {% for area in company.consulting_areas | slice(2,4) %}
                   <div class="services-card">
                     <div class="service-images">
                       <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image "
@@ -226,7 +226,7 @@ postPage = "post"
                   {% endfor %}
                 </div>
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  {% for area in company.consulting_areas | slice(2,4) %}
+                  {% for area in company.consulting_areas | slice(4,6) %}
                   <div class="services-card">
                     <div class="service-images">
                       <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image "
