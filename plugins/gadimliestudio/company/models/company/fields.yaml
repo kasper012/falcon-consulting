@@ -108,17 +108,17 @@ tabs:
         # team
         partner_title:
             tab: Mətnlər
-            label: Komanda bölməsində başlıq
+            label: Partnyorlar bölməsində başlıq
             span: storm
             cssClass: col-md-12
         partner_suptitle:
             tab: Mətnlər
-            label: Komanda bölməsində başlıq üstündə yazı
+            label: Partnyorlar bölməsində başlıq üstündə yazı
             span: storm
             cssClass: col-md-6
         partner_text:
             tab: Mətnlər
-            label: Komanda bölməsində mətn
+            label: Partnyorlar bölməsində mətn
             span: storm
             cssClass: col-md-6
             type: richeditor

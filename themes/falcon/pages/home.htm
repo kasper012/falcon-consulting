@@ -117,7 +117,7 @@ postPage = "post"
             <div class="column column-2 about-text-wrapper d-flex align-items-center">
               <div class="row about-text">
                 <p class="text-gray">
-                  {{ company.about_second_text }}
+                  {{ company.about_second_text | raw }}
                   <br>
                   <div class="container office-info-wrapper clearfix">
                     <div class="row">
@@ -376,6 +376,7 @@ postPage = "post"
           </div>
         </section>
         <!---END TEAM-->
+        {% if false %}
       <!--PARTNER START-->
       <section class="Partner" id="partners">
         <div class="container">
@@ -437,6 +438,7 @@ postPage = "post"
         </div>
       </section>
       <!--END PARTNER-->
+      {% endif %}
       <!---APPOITNMENT START-->
       <section class="Appointment mt-10" id="contacts">
         <div class="container">
