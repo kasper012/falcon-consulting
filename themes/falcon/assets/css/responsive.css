@@ -3653,3 +3653,14 @@
     left: 7px;
   }
 }
+@media (max-width:768px){
+    .languages-moblie {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width:769px){
+    .languages-moblie {
+        display: none;
+    }
+}
