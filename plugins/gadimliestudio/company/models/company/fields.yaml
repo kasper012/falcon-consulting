@@ -30,7 +30,7 @@ tabs:
         about_subtitle:
             tab: Mətnlər
             label: Haqqımızda bölməsində başlıq altında yazı
-            span: storm
+            span: storm 
             cssClass: col-md-6
         about_text:
             tab: Mətnlər
@@ -187,12 +187,7 @@ tabs:
                     description:
                         label: Təsvir
                         type: richeditor
-                    type:
-                        label: Tip
-                        type: dropdown
-                        options:
-                            type1: İdarəetmə
-                            type2: Daxili Kommunikasiyalar 
+
 
 # Contacts        
         telephone:
