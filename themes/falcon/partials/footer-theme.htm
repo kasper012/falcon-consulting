@@ -35,8 +35,7 @@
                             <hr class="left-hr" />
                             
                             <p class="footer-text">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                              dolore.
+                              {{ 'Footer text lorem ipsum dolor sit amet' |_ }}
                             </p>
                             <div class="footer-icon-wrapper">
                               {% for social in company.socials %}
@@ -55,10 +54,10 @@
                     <div class="footer-bottom clear-fix">
                       <div class="container">
                         <div class="row clearfix">
-                          <div class="footer-copyright column column-2">
+                          <div class="footer-copyright column column-2 footer-custom-copyright">
                             &copy; Copyright {{ now | date('Y') }}
                           </div>
-                          <div class="column column-2 footer-nav footer-copyright d-flex justify-content-end">
+                          <div class="column column-2 footer-nav footer-copyright d-flex justify-content-end footer-custom-copyright">
                             {{ 'Veb-sayt <a href="https://studio.gadimlie.com"> &nbsp; Gadimlie Studio &nbsp; </a>tərəfindən hazırlanıb' |_ }}
                           </div>
                         </div>

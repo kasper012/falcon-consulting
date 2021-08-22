@@ -3471,3 +3471,9 @@ blockquote::before {
 .mt-12 {
   margin-top: 12rem !important;
 }
+.nav-brand img {
+  min-width: 100px;
+  max-width: 75%;
+  transform: scale(1.2);
+}
+.h-100
