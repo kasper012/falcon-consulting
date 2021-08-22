@@ -30,12 +30,10 @@ tabs:
                         cssClass: col-md-4
                     btn_txt:
                         label: Düymənin məzmunu
-                        span: auto
                         span: storm
                         cssClass: col-md-6
                     btn_url: 
                         label: Düymənin linki
-                        span: auto
                         span: storm
                         cssClass: col-md-6
                     image: 
