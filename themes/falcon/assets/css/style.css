@@ -3468,3 +3468,8 @@ blockquote::before {
 .mt-12 {
   margin-top: 12rem !important;
 }
+@media (max-width:768px){
+.nav-brand img {
+  display: none;
+}
+}
