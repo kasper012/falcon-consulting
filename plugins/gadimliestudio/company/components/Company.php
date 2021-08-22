@@ -93,6 +93,11 @@ class Company extends ComponentBase
         $company->partner_title = $settings->partner_title;
         $company->partner_text = $settings->partner_text;
         $company->partner_suptitle = $settings->partner_suptitle;
+        
+        
+        $company->about_image_1 = $settings->about_image_1;
+        $company->about_image_2 = $settings->about_image_2;
+        $company->about_image_3 = $settings->about_image_3;
 
 
         

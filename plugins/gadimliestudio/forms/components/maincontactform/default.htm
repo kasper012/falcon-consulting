@@ -1,9 +1,6 @@
-
-
-
 <form method="post" data-request="{{ __SELF__ }}::onSend"  data-request-validate data-request-flash>
     <div class="input-field">
-        <input type="text" class="form-input" placeholder="{{ 'Adımız və soyadınız' }}" name="name" />
+        <input type="text" class="form-input" placeholder="{{ 'Adınız və soyadınız' }}" name="name" />
     </div>
     <div class="input-field">
         <input type="phone" class="form-input" placeholder="{{ 'Telefon' |_ }}" name="phone" />
@@ -12,7 +9,7 @@
         <input type="email" class="form-input" placeholder="{{ 'Elektron ünvan' |_ }}" name="email" />
     </div>
     <div class="input-field">
-        <textarea class="form-textarea" placeholder="{{ 'Mesaj' |_ }}" rows="13" name="email"></textarea>
+        <textarea class="form-textarea" placeholder="{{ 'Mesaj' |_ }}" rows="13" name="msg"></textarea>
     </div>
     <button class="button style-4" type="submit">{{ 'Göndər' |_ }}</button>
 </form>

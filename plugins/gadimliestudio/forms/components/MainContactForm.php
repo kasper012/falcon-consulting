@@ -42,7 +42,10 @@ class MainContactForm extends ComponentBase
 
         $validation = Validator::make(
             $form = Input::all(), [
-
+                'name' => 'required',    
+                'phone' => 'required',    
+                'email' => 'required|email',    
+                'msg' => 'required',    
             ], $customMessages
         );
 

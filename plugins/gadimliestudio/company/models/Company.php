@@ -34,7 +34,7 @@ class Company extends Model
       'about_title',
       'about_subtitle',
       'about_text',
-      'about_secondtext',
+      'about_second_text',
       'about_btn_url',
       'about_btn_txt',
       'services_title',

@@ -22,102 +22,103 @@ fields:
 
 tabs:
     fields:
+        about_image_1:
+            tab: Haqqımızda
+            label: Haqqımızda bölməsində şəkil
+            type: mediafinder
+            span: storm
+            cssClass: col-md-4
+        about_image_2:
+            tab: Haqqımızda
+            label: Haqqımızda bölməsində şəkil
+            type: mediafinder
+            span: storm
+            cssClass: col-md-4
+        about_image_3:
+            tab: Haqqımızda
+            label: Haqqımızda bölməsində şəkil
+            type: mediafinder
+            span: storm
+            cssClass: col-md-4
         about_title:
-            tab: Mətnlər
+            tab: Haqqımızda
             label: Haqqımızda bölməsində başlıq
             span: storm
             cssClass: col-md-6
         about_subtitle:
-            tab: Mətnlər
+            tab: Haqqımızda
             label: Haqqımızda bölməsində başlıq altında yazı
             span: storm 
             cssClass: col-md-6
         about_text:
-            tab: Mətnlər
+            tab: Haqqımızda
             label: Haqqımızda bölməsində birinci mətn
             span: storm
             cssClass: col-md-6
             type: richeditor
         about_second_text:
-            tab: Mətnlər
+            tab: Haqqımızda
             label: Haqqımızda bölməsində ikinci mətn
             type: richeditor
             span: storm
             cssClass: col-md-6
         about_btn_url:
-            tab: Mətnlər
+            tab: Haqqımızda
             label: Haqqımızda bölməsində düymənin linki
             span: storm
             cssClass: col-md-6
         about_btn_txt:
-            tab: Mətnlər
+            tab: Haqqımızda
             label: Haqqımızda bölməsində düymənin məzmunu
-            span: storm
-            cssClass: col-md-6
-        # services
-        services_title:
-            tab: Mətnlər
-            label: Xidmətlər bölməsində başlıq
-            span: storm
-            cssClass: col-md-12
-        services_subtitle:
-            tab: Mətnlər
-            label: Xidmətlər bölməsində başlıq altında yazı
-            span: storm
-            cssClass: col-md-6
-        services_text:
-            tab: Mətnlər
-            label: Xidmətlər bölməsində mətn
-            type: richeditor
             span: storm
             cssClass: col-md-6
         # bloq
         blog_title:
-            tab: Mətnlər
+            tab: Bloq
             label: Bloq bölməsində başlıq
             span: storm
             cssClass: col-md-12
         blog_suptitle:
-            tab: Mətnlər
+            tab: Bloq
             label: Bloq bölməsində başlıq üstündə yazı
             span: storm
             cssClass: col-md-6
         blog_text:
-            tab: Mətnlər
+            tab: Bloq
             label: Bloq bölməsində mətn
             type: richeditor
             span: storm
             cssClass: col-md-6
         # team
         team_title:
-            tab: Mətnlər
+            tab: Komanda
             label: Komanda bölməsində başlıq
             span: storm
             cssClass: col-md-12
         team_suptitle:
-            tab: Mətnlər
+            tab: Komanda
             label: Komanda bölməsində başlıq üstündə yazı
             span: storm
             cssClass: col-md-6
         team_text:
-            tab: Mətnlər
+            tab: Komanda
             label: Komanda bölməsində mətn
             type: richeditor
             span: storm
             cssClass: col-md-6
         # team
         partner_title:
-            tab: Mətnlər
+            tab: Müştərilər
             label: Partnyorlar bölməsində başlıq
             span: storm
             cssClass: col-md-12
         partner_suptitle:
-            tab: Mətnlər
+            tab: Müştərilər
             label: Partnyorlar bölməsində başlıq üstündə yazı
             span: storm
             cssClass: col-md-6
         partner_text:
-            tab: Mətnlər
+            tab: Müştərilər
             label: Partnyorlar bölməsində mətn
             span: storm
             cssClass: col-md-6
@@ -172,7 +173,22 @@ tabs:
                         label: Təsvir
                         type: richeditor
 
-    
+        services_title:
+            tab:  Məsləhət xidmətlərimizin sahələri
+            label: Xidmətlər bölməsində başlıq
+            span: storm
+            cssClass: col-md-12
+        services_subtitle:
+            tab:  Məsləhət xidmətlərimizin sahələri
+            label: Xidmətlər bölməsində başlıq altında yazı
+            span: storm
+            cssClass: col-md-6
+        services_text:
+            tab:  Məsləhət xidmətlərimizin sahələri
+            label: Xidmətlər bölməsində mətn
+            type: richeditor
+            span: storm
+            cssClass: col-md-6
         consulting_areas:
             tab: Məsləhət xidmətlərimizin sahələri
             type: repeater

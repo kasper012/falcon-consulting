@@ -85,22 +85,22 @@ postPage = "post"
             </div>
             <div class="column column-2 gallery-section">
               <div class="gallery" id="lightGallery">
-                <div data-src="{{ 'assets/images/image1.jpg' | theme }}" data-responsive-src="{{ 'assets/images/image1.jpg' | theme }}" data-aos="fade-up"
+                <div data-src="{{ company.about_image_1 | media }}" data-responsive-src="{{ company.about_image_1 | media }}" data-aos="fade-up"
                   data-aos-duration="3100" class="img-gallery-wrap">
                   <a href="#">
                     <div class="img-gallery">
-                      <img class="res-img gallery-image" src="{{ 'assets/images/image1.jpg' | theme }}" alt="image-1" />
+                      <img class="res-img gallery-image" src="{{ company.about_image_1 | media }}" alt="image-1" />
                       <div class="on-hover-component">
                         <i class="fas fa-search hover-icon"></i>
                       </div>
                     </div>
                   </a>
                 </div>
-                <div data-src="{{ 'assets/images/image2.jpg' | theme }}" data-responsive-src="{{ 'assets/images/image2.jpg' | theme }}" data-aos="fade-up"
+                <div data-src="{{ company.about_image_2 | media }}" data-responsive-src="{{ company.about_image_2 | media }}" data-aos="fade-up"
                   data-aos-duration="3100" class="img-gallery-wrap">
                   <a href="#">
                     <div class="img-gallery">
-                      <img class="res-img gallery-image" src="{{ 'assets/images/image2.jpg' | theme }}" alt="image-2" />
+                      <img class="res-img gallery-image" src="{{ company.about_image_2 | media }}" alt="image-2" />
                       <div class="on-hover-component">
                         <i class="fas fa-search hover-icon"></i>
                       </div>
@@ -112,7 +112,7 @@ postPage = "post"
           </div>
           <div class="row clearfix about-desc">
             <div class="column column-2 about-img-tablet" data-aos="fade-right" data-aos-duration="3100">
-              <img class="images about-text" src="{{ 'assets/images/image3-1.jpg' | theme }}" alt="img" />
+              <img class="images about-text" src="{{ company.about_image_3 | media }}" alt="img" />
             </div>
             <div class="column column-2 about-text-wrapper d-flex align-items-center">
               <div class="row ">
