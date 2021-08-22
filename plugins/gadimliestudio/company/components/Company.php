@@ -76,7 +76,7 @@ class Company extends ComponentBase
         $company->about_title = $settings->about_title;
         $company->about_subtitle = $settings->about_subtitle;
         $company->about_text = $settings->about_text;
-        $company->about_secondtext = $settings->about_secondtext;
+        $company->about_second_text = $settings->about_second_text;
         $company->about_btn_url = $settings->about_btn_url;
         $company->about_btn_txt = $settings->about_btn_txt;
         $company->services_title = $settings->services_title;
