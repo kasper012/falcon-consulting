@@ -20,6 +20,8 @@ class Company extends Model
       'team',
       'docs',
       'faq',
+      'trainings',
+      'consulting_areas',
       'partner_description',
       'history_title',
       'history_text',
