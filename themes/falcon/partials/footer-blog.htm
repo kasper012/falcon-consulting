@@ -1,0 +1,25 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 2
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category"
+postPage = "post"
+==
+<div class="footer-news-wrapper clear-fix">
+    {% for post in blogPosts.posts %}
+    <div class="row footer-news-item mt-2">
+      <div class="img-zoom-wrapper">
+        <a href="singlePost.html">
+          <img class="footer-news-img" src="{{ post.featured_images[0].path }}" alt="footer-news-img" />
+        </a>
+      </div>
+      <div class="footer-news-text">
+        <a class="footer-news-title" href="{{ post.title }}">{{ post.title }}</a>
+        <p class="footer-news-date footer-text">
+            {{ post.published_at|date('d/m/Y') }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>

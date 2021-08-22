@@ -1,0 +1,68 @@
+    <!---FOOTER START
+				==================================-->
+                <footer id="footer" class="footer clearfix">
+                    <div class="footer-widget">
+                      <div class="container">
+                        <div class="row clearfix">
+                          <div class="column column-4 footer-widget-component">
+                            <a href="{{ 'home' | page }}">
+                              <img class="footer-logo res-img" src="{{ 'assets/images/horizontal_on_corporate_by_logaster.png' | theme }}" alt="footer-logo" />
+                            </a>
+                            {% if false %}
+                            <p class="footer-text footer-desc">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                              dolore.
+                            </p>
+                            <a href="blog.html" class="button style-7">Get Location</a>
+                            {% endif %}
+                          </div>
+                          <div class="column column-4 footer-widget-component">
+                            <p class="footer-title text-white">{{ 'Əlaqə saxlayın' |_ }}</p>
+                            <hr class="left-hr" />
+                            <p class="footer-text"><b>{{ company.telephone }}</b></p>
+                            <p class="footer-text">
+                              {{ company.address }}
+                            </p>
+                            <p class="footer-text footer-email">{{ company.pochta }}</p>
+                          </div>
+                          <div class="column column-4 footer-widget-component">
+                            <p class="footer-title text-white">{{ 'Axırincı xəbərlər' |_ }}</p>
+                            <hr class="left-hr" />
+                            {% partial 'footer-blog' %}
+                          </div>
+                          <div class="column column-4 footer-widget-component">
+                            <p class="footer-title text-white">{{ 'BİZİ İZLƏYİN' |_ }}</p>
+                            <hr class="left-hr" />
+                            
+                            <p class="footer-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                              dolore.
+                            </p>
+                            <div class="footer-icon-wrapper">
+                              {% for social in company.socials %}
+                              <a href="{{ social.url }}" target="_blank">
+                                <div class="footer-icon">
+                                  <i class="{{ social.name }}"></i>
+                                </div>
+                              </a>
+                              {%  endfor %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="footer-bottom clear-fix">
+                      <div class="container">
+                        <div class="row clearfix">
+                          <div class="footer-copyright column column-2">
+                            &copy; Copyright {{ now | date('Y') }}
+                          </div>
+                          <div class="column column-2 footer-nav footer-copyright d-flex justify-content-end">
+                            {{ 'Veb-sayt <a href="https://studio.gadimlie.com"> &nbsp; Gadimlie Studio &nbsp; </a>tərəfindən hazırlanıb' |_ }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </footer>
+                  <!--END FOOTER-->

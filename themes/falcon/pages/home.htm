@@ -6,6 +6,8 @@ title = "Home"
 localeTitle[en] = "Home"
 localeTitle[ru] = "Главная"
 
+
+[Sliders]
 [blogPosts]
 pageNumber = "{{ :page }}"
 postsPerPage = 4
@@ -14,70 +16,39 @@ sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
 ==
-{% partial 'home-header' %}
 
-<div id="content" class="content-wrapper clearfix">
-    <!--SWIPER START-->
-    <section class="header-swiper">
+{% partial 'header-theme' %}
+    <!--SLIDER START-->
+    <section class="header-swiper" id="home">
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="swiper-bg">
-              <div class="header-text-wrap">
-                <div class="container">
-                  <div class="row header-text">
-                    <img src="{{ 'assets/images/shape2.png' | theme }}" alt="header-shape" class="header-shape" />
-                    <div class="header-title">
-                      <p class="text-white">welcome</p>
-                    </div>
-                    <div class="header-sub-title">
-                      <h1 class="text-white">
-                        We’re professionals <br> for growing your business!
-                      </h1>
-                    </div>
-                    <div class="header-desc">
-                      <p class="text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
-                      </p>
-                    </div>
-                    <div class="header-button">
-                      <p class="learn-more">
-                        <a class="text-white" href="about.html">LEARN MORE</a>
-                        <i class="fas fa-long-arrow-alt-right text-white"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          {% for slider in sliders.slider %}
           <div class="swiper-slide">
             <div class="swiper-bg" style="
-                  background: url('{{ 'assets/images/slider-2s.jpg' | theme }}');
-                  background-size: cover;
-                  background-position: center center;
-                ">
+            background: url('{{ slider.image | media }}');
+            background-size: cover;
+            background-position: center center;
+          ">
               <div class="header-text-wrap">
                 <div class="container">
                   <div class="row header-text">
-                    <img src="{{ 'assets/images/shape2.png' | theme }}" alt="header-shape" class="header-shape" />
+                    <img src="{{ 'assets/images/transparent-shape1.png' | theme }}" alt="header-shape" class="header-shape" />
                     <div class="header-title">
-                      <p class="text-white">services</p>
+                      <p class="text-white">{{ slider.suptitle }}</p>
                     </div>
                     <div class="header-sub-title">
                       <h1 class="text-white">
-                        Get guaranteed success <br> with our advisors!
+                        {{ slider.title }}
                       </h1>
                     </div>
                     <div class="header-desc">
                       <p class="text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                        {{ slider.subtitle }}
                       </p>
                     </div>
                     <div class="header-button">
                       <p class="learn-more">
-                        <a class="text-white" href="about.html">LEARN MORE</a>
+                        <a class="text-white" href="{{ slider.btn_url }}">{{ slider.btn_txt }}</a>
                         <i class="fas fa-long-arrow-alt-right text-white"></i>
                       </p>
                     </div>
@@ -86,6 +57,7 @@ postPage = "post"
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
         <!-- Add Arrows -->
         <div class="swiper-button-next"></div>
@@ -97,16 +69,17 @@ postPage = "post"
     <!--END SWIPER-->
 
       <!---ABOUT START-->
-      <section class="About">
+      <section class="About" id="about">
         <div class="container">
           <div class="row clearfix">
             <div class="column column-2 about-section d-flex align-items-center">
               <div class="about-section-title ">
-                <h2 class="text-blue">{{ 'Missiyamız' |_ }}</h2>
+                <h2 class="text-blue">{{ company.about_title }}</h2>
                 <hr class="left-hr" />
                 <p class="sub-title">
                 </p>
                 <p class="text-gray about-desc">
+                  {{ company.about_text | raw }}
                 </p>
               </div>
             </div>
@@ -114,7 +87,7 @@ postPage = "post"
               <div class="gallery" id="lightGallery">
                 <div data-src="{{ 'assets/images/image1.jpg' | theme }}" data-responsive-src="{{ 'assets/images/image1.jpg' | theme }}" data-aos="fade-up"
                   data-aos-duration="3100" class="img-gallery-wrap">
-                  <a href="index.html#">
+                  <a href="#">
                     <div class="img-gallery">
                       <img class="res-img gallery-image" src="{{ 'assets/images/image1.jpg' | theme }}" alt="image-1" />
                       <div class="on-hover-component">
@@ -125,7 +98,7 @@ postPage = "post"
                 </div>
                 <div data-src="{{ 'assets/images/image2.jpg' | theme }}" data-responsive-src="{{ 'assets/images/image2.jpg' | theme }}" data-aos="fade-up"
                   data-aos-duration="3100" class="img-gallery-wrap">
-                  <a href="index.html#">
+                  <a href="#">
                     <div class="img-gallery">
                       <img class="res-img gallery-image" src="{{ 'assets/images/image2.jpg' | theme }}" alt="image-2" />
                       <div class="on-hover-component">
@@ -144,12 +117,52 @@ postPage = "post"
             <div class="column column-2 about-text-wrapper d-flex align-items-center">
               <div class="row about-text">
                 <p class="text-gray">
-                  {{ 'Idarəetmə praktikasını
-                  inkişaf etdirməklə tərəqqiyə töhfə
-                  verməkdədir.' |_ }}
+                  {{ company.about_secondtext }}
+                  <br>
+                  <div class="container office-info-wrapper clearfix">
+                    <div class="row">
+                      <div class="office-site-card office-site-card-custom ">
+
+                        <div class="site-text">
+                          <p class="text-bold site-type">Peşəkarlıq</p>
+                          <p class="site-address">
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="office-site-card office-site-card-custom ">
+
+                        <div class="site-text">
+                          <p class="text-bold site-type">Vicdanlıq</p>
+                          <p class="site-address">
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="office-site-card office-site-card-custom ">
+
+                        <div class="site-text">
+                          <p class="text-bold site-type">Məsuliyyətlik</p>
+                          <p class="site-address">
+
+                          </p>
+                        </div>
+                      </div>
+                      <div class="office-site-card office-site-card-custom ">
+
+                        <div class="site-text">
+                          <p class="text-bold site-type">Davamlı özünüinkişaf</p>
+                          <p class="site-address">
+
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </ul>
                 </p>
                 <div class="about-button" data-aos="fade-up" data-aos-duration="3100">
-                  <a href="about.html" class="button style-2"> Həll sifariş edin</a>
+                  <a href="{{ 'home' | page }}#contacts" class="button style-2"> {{ company.about_btn_txt }}</a>
                 </div>
               </div>
             </div>
@@ -158,81 +171,60 @@ postPage = "post"
       </section>
       <!---END ABOUT-->
 
-
-
-      <!---Values START-->
-      <section class="Services">
+      <!---SERVICES START-->
+      <section class="Services" data-aos="fade-up" data-aos-duration="3100" id="services">
         <div class="container">
           <div class="row">
-            <div class="services-text d-flex align-items-center">
+            <div class="services-text">
               <div class="services-title">
                 <h3 class="text-blue text-bold">
-                  {{ 'Dəyərlərimiz' }}
+                  {{ company.services_title }}
                 </h3>
+                <p class="text-gray">
+                  {{ company.services_text | raw }}
+                </p>
 
               </div>
             </div>
             <div class="service-card-loop">
               <div class="row">
-                <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  <div class="services-card">
-                    <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ 'assets/images/service1s.png' | theme }}" alt="service image"
-                        width="70" />
-                    </div>
-                    <div class="service-desc">
-                      <div class="services-card-body">
-                        <p class="card-title">{{ 'Peşəkarlıq' |_ }}</p>
-                        <p class="service-card-desc">
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="services-card">
-                    <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ 'assets/images/service2-1.png' | theme }}" alt="service image"
-                        width="70" />
-                    </div>
-                    <div class="service-desc">
-                      <div class="services-card-body">
-                        <p class="card-title">{{ 'Vicdanlıq' |_ }}</p>
-                        <p class="service-card-desc">
 
+                <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
+                  {% for area in company.consulting_areas | slice(0,2)  %}
+                  <div class="services-card">
+                    <div class="service-images">
+                      <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image"
+                        width="70" />
+                    </div>
+                    <div class="service-desc">
+                      <div class="services-card-body">
+                        <p class="card-title">{{ area.title }}</p>
+                        <p class="service-card-desc">
+                          {{ area.description | raw }}
                         </p>
                       </div>
                     </div>
                   </div>
+                  {% endfor %}
                 </div>
-
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
+                  {% for area in company.consulting_areas | slice(2,4) %}
                   <div class="services-card">
                     <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ 'assets/images/service3-1.png' | theme }}" alt="service image"
+                      <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image "
                         width="70" />
                     </div>
                     <div class="service-desc">
                       <div class="services-card-body">
-                        <p class="card-title">{{ 'Məsuliyyətlik' |_ }}</p>
+                        <p class="card-title">{{ area.title }}</p>
                         <p class="service-card-desc">
-
+                          {{ area.description | raw }}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div class="services-card">
-                    <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ 'assets/images/service4-1.png' | theme }}" alt="service image"
-                        width="70" />
-                    </div>
-                    <div class="service-desc">
-                      <div class="services-card-body">
-                        <p class="card-title">{{ 'Davamlı özünüinkişaf' |_ }}</p>
-                        <p class="service-card-desc">
 
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -240,33 +232,32 @@ postPage = "post"
         </div>
       </section>
       <!---END SERVICES-->
-
-      <!-- !!! CONSULTING AREA -->
-      <section class="Services-list">
+      <section class="Services-list" id="trainings">
         <div class="container">
-          <div class="row">
-            <div class="testimoni-title">
-              <h3 class="text-blue">Məsləhət xidmətlərimizin sahələri</h3>
-              <hr class="left-hr" />
-              <p class="letter-space5">İdarəetmə</p>
-            </div>
+          <div class="about-section-title ">
+            <h2 class="text-blue">{{ 'Təlimlərimiz' |_ }}</h2>
           </div>
+          <hr class="left-hr mb-5" />
           <div class="row service-loop-wrap clearfix">
+            {% for training in company.trainings %}
             <div class="column column-3 service-card-tablet">
               <div class="service-cards card">
                 <div class="card-img-top img-zoom-wrapper">
-                  <img class="service-card-img card-img" src="{{ 'assets/images/consultation-PHUWVCP-500x300@2x.jpg' | theme }}"
+                  <img class="service-card-img card-img" src="{{ training.image | media }}"
                     alt="Business Consulting" />
                 </div>
                 <div class="card-body service-card-body">
+                  {% if false %}
                   <div class="serviceman-name">
                     <p>By <span class="s-name">Daniel Zelda</span></p>
                   </div>
-                  <div class="service-card-title">
-                    <a href="singleService.html">
-                      <h3 class="text-bold">BUSINESS CONSULTING</h3>
-                    </a>
+                  {% endif %}
+                  <div class="service-card-title mt-4">
+                    
+                      <h3 class="text-bold">{{ training.name }}</h3>
+                    
                   </div>
+                  {% if false %}
                   <div class="service-card-desc">
                     <p>
                       We live in the world of data now; data allows us to make
@@ -276,398 +267,155 @@ postPage = "post"
                       <a href="singleService.html" class="button style-8">Read More</a>
                     </div>
                   </div>
+                  {% endif %}
                 </div>
               </div>
             </div>
-            <div class="column column-3 service-card-tablet">
-              <div class="service-cards card">
-                <div class="card-img-top img-zoom-wrapper">
-                  <img class="service-card-img card-img" src="{{ 'assets/images/business-consultation-PQQA29L-500x300@2x.jpg' | theme }}"
-                    alt="Market Research" />
-                </div>
-                <div class="card-body service-card-body">
-                  <div class="serviceman-name">
-                    <p>By <span class="s-name">Daniel Zelda</span></p>
-                  </div>
-                  <div class="service-card-title">
-                    <a href="singleService.html">
-                      <h3 class="text-bold">MARKET RESEARCH</h3>
-                    </a>
-                  </div>
-                  <div class="service-card-desc">
-                    <p>
-                      We live in the world of data now; data allows us to make
-                      realistic decisions about the future. No financial...
-                    </p>
-                    <div class="service-card-button">
-                      <a href="https://html.themesawesome.com/konsultanhtml/singleservice.html" class="button style-8">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column column-3 service-card-tablet">
-              <div class="service-cards card">
-                <div class="card-img-top img-zoom-wrapper">
-                  <img class="service-card-img card-img" src="{{ 'assets/images/risk-management-500x300@2x.jpg' | theme }}"
-                    alt="Risk Management" />
-                </div>
-                <div class="card-body service-card-body">
-                  <div class="serviceman-name">
-                    <p>By <span class="s-name">Daniel Zelda</span></p>
-                  </div>
-                  <div class="service-card-title">
-                    <a href="singleService.html">
-                      <h3 class="text-bold">RISK MANAGEMENT</h3>
-                    </a>
-                  </div>
-                  <div class="service-card-desc">
-                    <p>
-                      We live in the world of data now; data allows us to make
-                      realistic decisions about the future. No financial...
-                    </p>
-                    <div class="service-card-button">
-                      <a href="singleService.html" class="button style-8">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            {% endfor %}
           </div>
 
-<!-- divider -->
-          <div class="row">
-            <div class="testimoni-title">
-              <hr class="left-hr" />
-              <p class="letter-space5">Daxili kommunikasiyalar</p>
-            </div>
-          </div>
-          <div class="row service-loop-wrap clearfix">
-            <div class="column column-3 service-card-tablet">
-              <div class="service-cards card">
-                <div class="card-img-top img-zoom-wrapper">
-                  <img class="service-card-img card-img" src="{{ 'assets/images/consultation-PHUWVCP-500x300@2x.jpg' | theme }}"
-                    alt="Business Consulting" />
-                </div>
-                <div class="card-body service-card-body">
-                  <div class="serviceman-name">
-                    <p>By <span class="s-name">Daniel Zelda</span></p>
-                  </div>
-                  <div class="service-card-title">
-                    <a href="singleService.html">
-                      <h3 class="text-bold">BUSINESS CONSULTING</h3>
-                    </a>
-                  </div>
-                  <div class="service-card-desc">
-                    <p>
-                      We live in the world of data now; data allows us to make
-                      realistic decisions about the future. No financial...
-                    </p>
-                    <div class="service-card-button">
-                      <a href="singleService.html" class="button style-8">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column column-3 service-card-tablet">
-              <div class="service-cards card">
-                <div class="card-img-top img-zoom-wrapper">
-                  <img class="service-card-img card-img" src="{{ 'assets/images/business-consultation-PQQA29L-500x300@2x.jpg' | theme }}"
-                    alt="Market Research" />
-                </div>
-                <div class="card-body service-card-body">
-                  <div class="serviceman-name">
-                    <p>By <span class="s-name">Daniel Zelda</span></p>
-                  </div>
-                  <div class="service-card-title">
-                    <a href="singleService.html">
-                      <h3 class="text-bold">MARKET RESEARCH</h3>
-                    </a>
-                  </div>
-                  <div class="service-card-desc">
-                    <p>
-                      We live in the world of data now; data allows us to make
-                      realistic decisions about the future. No financial...
-                    </p>
-                    <div class="service-card-button">
-                      <a href="https://html.themesawesome.com/konsultanhtml/singleservice.html" class="button style-8">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column column-3 service-card-tablet">
-              <div class="service-cards card">
-                <div class="card-img-top img-zoom-wrapper">
-                  <img class="service-card-img card-img" src="{{ 'assets/images/risk-management-500x300@2x.jpg' | theme }}"
-                    alt="Risk Management" />
-                </div>
-                <div class="card-body service-card-body">
-                  <div class="serviceman-name">
-                    <p>By <span class="s-name">Daniel Zelda</span></p>
-                  </div>
-                  <div class="service-card-title">
-                    <a href="singleService.html">
-                      <h3 class="text-bold">RISK MANAGEMENT</h3>
-                    </a>
-                  </div>
-                  <div class="service-card-desc">
-                    <p>
-                      We live in the world of data now; data allows us to make
-                      realistic decisions about the future. No financial...
-                    </p>
-                    <div class="service-card-button">
-                      <a href="singleService.html" class="button style-8">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </section>
-      <!-- END CONSULTING AREA -->
-      <!-- !!! TRAINNING -->
-      <section class="Teams bg-light-blue team-about">
+      <!--END SERVICES LIST-->
+          <!---BLOG START
+      ==================================-->
+      <section class="Blog" id="blog">
         <div class="container">
-          <div class="row clear-fix">
-            <div class="team-title">
-              <h3 class="text-blue text-center text-bold">
-                Təlimlərimiz
-              </h3>
-              <hr class="center-hr" />
+          <div class="row">
+            <div class="blog-title-wrap">
+              <div class="column column-2 blog-index-tablet">
+                <div class="blog-title">
+                  <p class="title-text letter-space5">{{ company.blog_suptitle }}</p>
+                  <h3 class="text-blue">{{ company.blog_title }}</h3>
+                  <hr class="left-hr" />
+                  <p class="text-gray">
+                    {{ company.blog_text | raw }}
+                  </p>
+                </div>
+              </div>
+              <div class="column column-2 blog-index-tablet">
+                <div class="blog-button" data-aos="fade-up" data-aos-duration="3500">
+                  <a class="button style-2" href="{{ 'blog' | page }}">{{ 'Bütün məqalələrə bax' |_ }}</a>
+                </div>
+              </div>
             </div>
-            <div class="column column-1 team-list d-flex justify-content-center">
-              <div class="column column-4 about-team-wrapper">
-                <div class="team-img-wrapper">
-                  <div class="team-img">
-                    <img class="res-img" src="{{ 'assets/images/t1-370x370-500x500.jpg' | theme }}" alt="team-images" />
-                    <div class="overlay">
-                      <div class="overlay-body">
-                        <p class="text-white text-center">
-                          At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium voluptatum
-                        </p>
-
-                      </div>
+          </div>
+          <div class="row">
+            <div class="blog-loop">
+              {% for post in blogPosts.posts %}
+              <div class="column column-3 blog-list-wrapper">
+                <div class="blog-card card">
+                  <div class="card-img-wrapper">
+                    <div class="card-img-top img-zoom-wrapper">
+                      <img class="res-img card-img" src="{{ post.featured_images[0].path }}" alt="card-img" />
                     </div>
+                    {% if false %}
+                    <div class="card-category">
+                      <p>engineering</p>
+                    </div>
+                    {% endif %}
                   </div>
-                  <div class="team-desc">
-                    <p class="text-blue team-name d-flex justify-content-end">İdarəetmə bacarıqları</p>
+                  <div class="card-body">
+                    <p class="card-title">
+                      <a href="{{ post.url }}">{{ post.title }}</a>
+                    </p>
+                    <p class="card-desc">
+                      {{ post.excerpt | raw }}
+                    </p>
+                    <div class="card-date">
+                      <small>{{ post.published_at|date('d/m/Y') }}</small>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="column column-4 about-team-wrapper">
-                <div class="team-img-wrapper">
-                  <div class="team-img">
-                    <img class="res-img" src="{{ 'assets/images/t1-370x370-500x500.jpg' | theme }}" alt="team-images" />
-                    <div class="overlay">
-                      <div class="overlay-body">
-                        <p class="text-white text-center">
-                          At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium voluptatum
-                        </p>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-desc">
-                    <p class="text-blue team-name d-flex justify-content-end">İdarəetmə bacarıqları</p>
-                  </div>
-                </div>
-              </div>
-              <div class="column column-4 about-team-wrapper">
-                <div class="team-img-wrapper">
-                  <div class="team-img">
-                    <img class="res-img" src="{{ 'assets/images/t1-370x370-500x500.jpg' | theme }}" alt="team-images" />
-                    <div class="overlay d-flex align-items-center">
-                      <div class="overlay-body">
-                        <p class="text-white text-center">
-                          At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium voluptatum
-                        </p>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-desc">
-                    <p class="text-blue team-name d-flex justify-content-end">İdarəetmə bacarıqları</p>
-                  </div>
-                </div>
-              </div>
-
-
+              {% endfor %}
 
             </div>
           </div>
         </div>
       </section>
-
-      <!-- END TRAINING -->
-      <!---BLOG START
-				==================================-->
-        <section class="Blog">
-          <div class="container">
-            <div class="row">
-              <div class="blog-title-wrap">
-                <div class="column column-2 blog-index-tablet">
-                  <div class="blog-title">
-                    <p class="title-text letter-space5"></p>
-                    <h3 class="text-blue">{{ 'Bloq' |_ }}</h3>
-                    <hr class="left-hr" />
-                    <p class="text-gray">
-                    </p>
-                  </div>
-                </div>
-                <div class="column column-2 blog-index-tablet">
-                  <div class="blog-button" data-aos="fade-up" data-aos-duration="3500">
-                    <a class="button style-2" href="{{ 'blog' | page }}"> {{ 'Bütün məqalələrə bax' |_ }} </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="blog-loop">
-                {% for post in blogPosts.posts %}
-                <div class="column column-3 blog-list-wrapper">
-                  <div class="blog-card card">
-                    <div class="card-img-wrapper">
-                      <div class="card-img-top img-zoom-wrapper">
-                        <img class="res-img card-img" src="{{ post.featured_images[0].path }}" alt="card-img" />
-                      </div>
-                      <div class="card-category">
-                        <p>{% for category in post.categories %}{{ category.name  }}{% endfor %}</p>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <p class="card-title">
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                      </p>
-                      <p class="card-desc">
-                        {{ post.excerpt | raw }}
-                      </p>
-                      <div class="card-date">
-                        <small>{{ post.published_at|date('d/m/Y') }}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </section>
-        <!---END BLOG-->
-
+      <!---END BLOG-->
       <!---TEAM START
 				==================================-->
-        <section class="Team">
+        <section class="Team" id="team">
           <div class="container">
             <div class="row">
               <div class="column column-4 team-section-desc">
                 <div class="team-title">
-                  <p class="text-gray letter-space5"></p>
-                  <h3 class="text-blue">{{ 'Komandamız' |_ }}</h3>
+                  <p class="text-gray letter-space5">{{ company.team_suptitle }}</p>
+                  <h3 class="text-blue">{{ team.title }}</h3>
                   <hr class="left-hr mb-3" />
                 </div>
                 <div class="team-body">
                   <p class="text-gray">
+                    {{ company.team_text | raw }}
                   </p>
+                  {% if false %}
+                  <a href="about.html">View All Team</a>
+                  {% endif %}
                 </div>
               </div>
               <div class="team-list">
+                {% for teammate in company.team %}
                 <div class="column column-3 team-wrapper">
                   <div class="team-img-wrapper">
-                    <div class="team-img team-img-non-hover">
-                      <img class="res-img" src="{{ 'assets/images/t2-370x370-500x500.jpg' | theme }}" alt="team-images" />
-                      <div class="overlay">
-                        <div class="overlay-body">
-                          <p class="text-white">
-                          </p>
-                        </div>
-                      </div>
+                    <div class="team-img">
+                      <img class="res-img" src="{{ teammate.image | media }}" alt="team-images" />
+
                     </div>
-                    <div class="team-desc d-flex justify-content-center" style="flex-direction: column;">
-                      <p class="team-name">Joye Byoend</p>
-                      <p class="team-job">Chief Operating</p>
+                    <div class="team-desc">
+                      <p class="team-name">{{ teammate.name }}</p>
+                      <p class="team-job">{{ teammate.post }}</p>
                     </div>
                   </div>
                 </div>
-                <div class="column column-3 team-wrapper">
-                  <div class="team-img-wrapper">
-                    <div class="team-img team-img-non-hover">
-                      <img class="res-img" src="{{ 'assets/images/t2-370x370-500x500.jpg' | theme }}" alt="team-images" />
-                      <div class="overlay">
-                        <div class="overlay-body">
-                          <p class="text-white">
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="team-desc d-flex justify-content-center" style="flex-direction: column;">
-                      <p class="team-name">Joye Byoend</p>
-                      <p class="team-job">Chief Operating</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="column column-3 team-wrapper">
-                  <div class="team-img-wrapper">
-                    <div class="team-img team-img-non-hover">
-                      <img class="res-img" src="{{ 'assets/images/t2-370x370-500x500.jpg' | theme }}" alt="team-images" />
-                      <div class="overlay">
-                        <div class="overlay-body">
-                          <p class="text-white">
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="team-desc d-flex justify-content-center" style="flex-direction: column;">
-                      <p class="team-name">Joye Byoend</p>
-                      <p class="team-job">Chief Operating</p>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
 
               </div>
             </div>
           </div>
         </section>
         <!---END TEAM-->
-
       <!--PARTNER START-->
-      <section class="Partner">
+      <section class="Partner" id="partners">
         <div class="container">
           <div class="row">
             <div class="partner-wrapper">
               <div class="partner-body">
                 <div class="partner-text">
                   <div class="partner-title">
-                    <p class="text-gray letter-space5"></p>
+                    <p class="text-gray letter-space5">{{ company.partners_suptitle }}</p>
                   </div>
-                  <h3 class="text-blue text-bold">Müştərilərimiz</h3>
+                  <h3 class="text-blue text-bold">{{ company.partner_title }}</h3>
                   <p class="partner-desc">
+                    {{ company.partner_text | raw }}
                   </p>
                   <hr class="flex-hr" />
                 </div>
               </div>
+              {% set clients = company.partners %}
               <div class="partner-logo-wrapper">
+                  
                 <div class="partner-list">
+                  {% for client in clients | slice(0,4) %}
                   <div class="logo-wrapper">
-                    <img src="{{ 'assets/images/client1@2x.jpg' | theme }}" alt="partner-img" class="partner-logo res-img" />
-                  </div>
-                  <div class="logo-wrapper">
-                    <img src="{{ 'assets/images/client2@2x.jpg' | theme }}" alt="partner-img" class="partner-logo res-img" />
-                  </div>
-                  <div class="logo-wrapper">
-                    <img src="{{ 'assets/images/client3@2x.jpg' | theme }}" alt="partner-img" class="partner-logo res-img" />
-                  </div>
-                  <div class="logo-wrapper">
-                    <img src="{{ 'assets/images/client5@2x.jpg' | theme }}" alt="partner-img" class="partner-logo res-img" />
-                  </div>
+                    <img src="{{ client.image | media }}" alt="partner-img" class="partner-logo res-img {{ loop.index }}" style="width: 180px !important;height: 180px !important;"/>
+                  </div>          
+                  {% endfor %}
                 </div>
+                <div class="partner-list">
+                  {% for client in clients | slice(4,7) %}
+                  <div class="logo-wrapper">
+                    <img src="{{ client.image | media }}" alt="partner-img" class="partner-logo res-img {{ loop.index }}" style="width: 180px !important;height: 180px !important;"/>
+                  </div>          
+                  {% endfor %}
+
+                </div>
+
+
+
+
+                {% if false %}
                 <div class="partner-list">
                   <div class="logo-wrapper">
                     <img src="{{ 'assets/images/client6@2x.jpg' | theme }}" alt="partner-img" class="partner-logo res-img" />
@@ -682,11 +430,52 @@ postPage = "post"
                     <img src="{{ 'assets/images/client7@2x.jpg' | theme }}" alt="partner-img" class="partner-logo res-img" />
                   </div>
                 </div>
+                {% endif %}
               </div>
             </div>
           </div>
         </div>
       </section>
       <!--END PARTNER-->
-{% partial 'footer' %}
-  </div>
+      <!---APPOITNMENT START-->
+      <section class="Appointment mt-10" id="contacts">
+        <div class="container">
+          <div class="row">
+            <div class="column column-60 desc-wrap">
+              <div class="row appointment-body">
+                <div class="column column-2 appointment-title">
+                  <h2>{{ 'Əlaqə' |_ }}</h2>
+                  <hr class="left-hr mobile-hide">
+                </div>
+                <div class="column column-2 main-office">
+                  <h2 class="mb-5">{{ company.address }}</h2>
+                  <a class="appointment-telp mb-5" href="tel:{{ company.telephone }}">{{ company.telephone }}</a>
+                  <a class="text-green" href="mailto:{{ company.pochta }}">{{ company.pochta }}</a>
+                </div>
+
+              </div>
+              <div class="row appoitnment-form my-0">
+                <div class="column column-1 appoitnment-form my-0">
+                  <div class="column column-1 left-form">
+                    {% component 'mainContactForm' %}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="column column-40 map-wrap">
+              <div class="gMaps">
+                <div class="mapouter">
+                  <div class="gmap_canvas appointment-map">
+                    <iframe id="gmap_canvas"
+                      src="{{ company.gmaps }}">
+                    </iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!---END APPOINTMENT-->
+      {% partial 'footer-theme' %}

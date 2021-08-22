@@ -7,7 +7,7 @@ localeTitle[ru] = "Блог"
 
 [blogCategories]
 slug = "{{ :slug }}"
-displayEmpty = 1
+displayEmpty = 6
 categoryPage = "category"
 
 [blogPosts]
@@ -20,8 +20,8 @@ categoryPage = "category"
 postPage = "post"
 ==
 {% set posts = blogPosts.posts %}
-{% partial 'header' %}
-<section class="Blogs">
+{% partial 'header-theme' %}
+<section class="Blogs mt-5 mt-8" >
     <div class="container">
       <div class="row clearfix">
         <div class="column column-75">
@@ -95,30 +95,17 @@ postPage = "post"
               <div class="sideBar-title">
                 <h5 class="text-bold">
                   <span class="side-icon">//</span>
-                  <span class="side-title-text">FOLLOW US</span>
+                  <span class="side-title-text">{{ 'BİZİ İZLƏYİN' |_ }}</span>
                 </h5>
               </div>
               <div class="sosmed-icon-wrapper">
-                <a href="index.html" target="_blank">
+                {% for social in company.socials %}
+                <a href="{{ social.url }}" target="_blank">
                   <div class="icon-wrapper">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="{{ social.name }}"></i>
                   </div>
                 </a>
-                <a href="index.html" target="_blank">
-                  <div class="icon-wrapper">
-                    <i class="fab fa-twitter"></i>
-                  </div>
-                </a>
-                <a href="index.html" target="_blank">
-                  <div class="icon-wrapper">
-                    <i class="fab fa-linkedin-in"></i>
-                  </div>
-                </a>
-                <a href="index.html" target="_blank">
-                  <div class="icon-wrapper">
-                    <i class="fab fa-instagram"></i>
-                  </div>
-                </a>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -126,4 +113,4 @@ postPage = "post"
       </div>
     </div>
   </section>
-  {% partial 'footer' %}
+  {% partial 'footer-theme' %}

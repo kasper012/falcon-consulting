@@ -8,130 +8,202 @@ fields:
     name:
         label: Şirkətin adı
         span: storm
-        cssClass: col-md-6
-        tab: Ümumi məlumat
+        cssClass: col-md-4
     address:
-        tab: Əlaqə
         label: Ünvan
         span: storm
-        cssClass: col-md-6
+        cssClass: col-md-4
+    favicon:
+        label: Favikon
+        type: mediafinder
+        span: storm
+        cssClass: col-md-4
+
 
 tabs:
     fields:
-# Main Info
-        # image:
-        #     tab: Ümumi məlumat
-        #     label: Haqqimizda shekil
-        #     type: mediafinder 
-        #     span: storm
-        #     cssClass: col-md-6
-
-        about:
-            tab: Ümumi məlumat
-            label: Haqqımızda mətn
+        about_title:
+            tab: Mətnlər
+            label: Haqqımızda bölməsində başlıq
+            span: storm
+            cssClass: col-md-6
+        about_subtitle:
+            tab: Mətnlər
+            label: Haqqımızda bölməsində başlıq altında yazı
+            span: storm
+            cssClass: col-md-6
+        about_text:
+            tab: Mətnlər
+            label: Haqqımızda bölməsində birinci mətn
+            span: storm
+            cssClass: col-md-6
+            type: richeditor
+        about_second_text:
+            tab: Mətnlər
+            label: Haqqımızda bölməsində ikinci mətn
             type: richeditor
             span: storm
             cssClass: col-md-6
-        excerpt:
-            tab: Ümumi məlumat
-            label: Qısa məlumat
-            type: richeditor 
+        about_btn_url:
+            tab: Mətnlər
+            label: Haqqımızda bölməsində düymənin linki
             span: storm
             cssClass: col-md-6
-# Partners 
-
-        project_title_text:
-            tab: Layihələr
-            type: richeditor
-            label: Layihələr başlıqı
-        project_description:
-            tab: Layihələr
-            type: richeditor
-            label: Layihələr təsviri
-
-        partner_description:
-            label: Partnyorlar haqqında təsvir 
-            type: textarea
-            tab: Partnyorlar
+        about_btn_txt:
+            tab: Mətnlər
+            label: Haqqımızda bölməsində düymənin məzmunu
+            span: storm
+            cssClass: col-md-6
+        # services
+        services_title:
+            tab: Mətnlər
+            label: Xidmətlər bölməsində başlıq
             span: storm
             cssClass: col-md-12
+        services_subtitle:
+            tab: Mətnlər
+            label: Xidmətlər bölməsində başlıq altında yazı
+            span: storm
+            cssClass: col-md-6
+        services_text:
+            tab: Mətnlər
+            label: Xidmətlər bölməsində mətn
+            type: richeditor
+            span: storm
+            cssClass: col-md-6
+        # bloq
+        blog_title:
+            tab: Mətnlər
+            label: Bloq bölməsində başlıq
+            span: storm
+            cssClass: col-md-12
+        blog_suptitle:
+            tab: Mətnlər
+            label: Bloq bölməsində başlıq üstündə yazı
+            span: storm
+            cssClass: col-md-6
+        blog_text:
+            tab: Mətnlər
+            label: Bloq bölməsində mətn
+            type: richeditor
+            span: storm
+            cssClass: col-md-6
+        # team
+        team_title:
+            tab: Mətnlər
+            label: Komanda bölməsində başlıq
+            span: storm
+            cssClass: col-md-12
+        team_suptitle:
+            tab: Mətnlər
+            label: Komanda bölməsində başlıq üstündə yazı
+            span: storm
+            cssClass: col-md-6
+        team_text:
+            tab: Mətnlər
+            label: Komanda bölməsində mətn
+            type: richeditor
+            span: storm
+            cssClass: col-md-6
+        # team
+        partner_title:
+            tab: Mətnlər
+            label: Komanda bölməsində başlıq
+            span: storm
+            cssClass: col-md-12
+        partner_suptitle:
+            tab: Mətnlər
+            label: Komanda bölməsində başlıq üstündə yazı
+            span: storm
+            cssClass: col-md-6
+        partner_text:
+            tab: Mətnlər
+            label: Komanda bölməsində mətn
+            span: storm
+            cssClass: col-md-6
+            type: richeditor
+        
+
+
+
+
+
         partners:
-            tab: Partnyorlar
+            tab: Müştərilər
             type: repeater
-            prompt: Yeni partnyor əlavə et
+            prompt: Yeni müştəri əlavə et
             form:
                 fields:
                     image:
                         type: mediafinder
 
-# FAQ
-        # faq:
-        #     type: repeater
-        #     prompt: Yeni sual-cavab əlavə et
-        #     tab: FAQ
-        #     form:
-        #         fields:
-        #             question:
-        #                 label: Sual
-        #             answer:
-        #                 label: Cavab
-                
 
 
-        counters:
-            tab: Metrik göstəricilər
+
+
+        team:
+            tab: Komanda
             type: repeater
-            prompt: Yeni metrik göstəricilər əlavə et
-            form:   
+            prompt: Yeni komanda üzvü əlavə et
+            form:
                 fields:
-                    number:
-                        label: Göstəricinin rəqəmləri
-                    text:
-                        label: Göstəricinin mətni
+                    image:
+                        label: Komanda üzvün şəkili
+                        type: mediafinder
+                    name:
+                        label: Komanda üzvün adı və soyadı
+                    post:
+                        label: Komanda üzvün vəzifəsi
 
 
 
-        # team:
-        #     tab: Komanda
-        #     type: repeater
-        #     prompt: Yeni komanda üzvü əlavə et
-        #     form:
-        #         fields:
-        #             image:
-        #                 label: Komanda üzvün şəkili
-        #                 type: mediafinder
-        #             name:
-        #                 label: Komanda üzvün adı və soyadı
-        #             post:
-        #                 label: Komanda üzvün vəzifəsi
-        # docs:
-        #     tab: Sənədlər
-        #     type: repeater
-        #     prompt: Yeni sənəd əlavə et
-        #     form:
-        #         fields:
-        #             title:
-        #                 label: Sənədin adı
-        #             doc:
-        #                 label: Sənəd
-        #                 type: mediafinder
-
-        careers_description:
-            tab: Karyera
-            type: richeditor
-            span: storm
-            cssClass: col-md-12
-        careers:
-            tab: Karyera
+        trainings:
+            tab: Treninqlər
             type: repeater
-            prompt: Yeni vakansiya əlavə et
+            prompt: Yeni treninq əlavə et
+            form:
+                fields:
+                    name:
+                        label: Treninqın başlığı
+                    image:
+                        label: Şəkil
+                        type: mediafinder
+                    description:
+                        label: Təsvir
+                        type: richeditor
+
+        values:
+            tab: Dəyərlərimiz
+            type: repeater
+            prompt: Yeni dəyər əlavə et
             form:
                 fields:
                     title:
-                        label: Vakansiyanın adı
+                        label: Başlıq
+                    image:
+                        label: Şəkil
+                        type: mediafinder
+        consulting_areas:
+            tab: Məsləhət xidmətlərimizin sahələri
+            type: repeater
+            prompt: Yeni sahə əlavə et
+            form:
+                fields:
+                    title: 
+                        label: Başlıq
+                    image:
+                        label: Şəkil
+                        type: mediafinder
                     description:
-                        label: Vakansiyanın təsviri
+                        label: Təsvir
                         type: richeditor
+                    type:
+                        label: Tip
+                        type: dropdown
+                        options:
+                            type1: İdarəetmə
+                            type2: Daxili Kommunikasiyalar 
+
 # Contacts        
         telephone:
             tab: Əlaqə
@@ -163,5 +235,4 @@ tabs:
                         default: fab fa-
                     url:
                         label: Sosial şəbəkənin linki
-
                     

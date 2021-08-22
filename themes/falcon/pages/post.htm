@@ -11,11 +11,11 @@ slug = "{{ :slug }}"
 displayEmpty = 1
 categoryPage = "category"
 ==
-{% partial 'header' %}
+{% partial 'header-theme' %}
 <div id="content" class="content-wrapper clearfix">
     <!---BLOG START
                   ==================================-->
-    <section class="BlogPost">
+    <section class="BlogPost mt-12">
       <div class="container">
         <div class="row blogPost-wrapper">
           <div class="column column-75 clearfix">
@@ -70,26 +70,13 @@ categoryPage = "category"
                   </h5>
                 </div>
                 <div class="sosmed-icon-wrapper">
-                  <a href="index.html" target="_blank">
+                  {% for social in company.socials %}
+                  <a href="{{ social.url }}" target="_blank">
                     <div class="icon-wrapper">
-                      <i class="fab fa-facebook-f"></i>
+                      <i class="{{ social.name }}"></i>
                     </div>
                   </a>
-                  <a href="index.html" target="_blank">
-                    <div class="icon-wrapper">
-                      <i class="fab fa-twitter"></i>
-                    </div>
-                  </a>
-                  <a href="index.html" target="_blank">
-                    <div class="icon-wrapper">
-                      <i class="fab fa-linkedin-in"></i>
-                    </div>
-                  </a>
-                  <a href="index.html" target="_blank">
-                    <div class="icon-wrapper">
-                      <i class="fab fa-instagram"></i>
-                    </div>
-                  </a>
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -99,6 +86,7 @@ categoryPage = "category"
     </section>
     <!--END BLOG POST-->
 
+    {% if false %}
     <!---NEWSLETTER START
           ==================================-->
     <section class="Newsletter">
@@ -122,4 +110,6 @@ categoryPage = "category"
       </div>
     </section>
     <!---END NEWSLETTER-->
+    {% endif %}
   </div>
+  {% partial 'footer-theme' %}

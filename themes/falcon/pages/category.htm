@@ -16,15 +16,15 @@ categoryPage = "category"
 [blogPosts]
 pageNumber = "{{ :page }}"
 categoryFilter = "{{ :slug }}"
-postsPerPage = 10
+postsPerPage = 6
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "category"
 postPage = "post"
 ==
-{% partial 'header' %}
+{% partial 'header-theme' %}
 {% set posts = blogPosts.posts %}
-<section class="Blogs">
+<section class="Blogs mt-8">
     <div class="container">
       <div class="row clearfix">
         <div class="column column-75">
@@ -103,26 +103,13 @@ postPage = "post"
                 </h5>
               </div>
               <div class="sosmed-icon-wrapper">
-                <a href="index.html" target="_blank">
+                {% for social in company.socials %}
+                <a href="{{ social.url }}" target="_blank">
                   <div class="icon-wrapper">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="{{ social.name }}"></i>
                   </div>
                 </a>
-                <a href="index.html" target="_blank">
-                  <div class="icon-wrapper">
-                    <i class="fab fa-twitter"></i>
-                  </div>
-                </a>
-                <a href="index.html" target="_blank">
-                  <div class="icon-wrapper">
-                    <i class="fab fa-linkedin-in"></i>
-                  </div>
-                </a>
-                <a href="index.html" target="_blank">
-                  <div class="icon-wrapper">
-                    <i class="fab fa-instagram"></i>
-                  </div>
-                </a>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -130,4 +117,4 @@ postPage = "post"
       </div>
     </div>
   </section>
-  {% partial 'footer' %}
+  {% partial 'footer-theme' %}

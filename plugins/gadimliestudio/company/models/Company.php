@@ -29,6 +29,24 @@ class Company extends Model
       'metrics_title',
       'project_title_text',
       'project_description',
+      'about_title',
+      'about_subtitle',
+      'about_text',
+      'about_secondtext',
+      'about_btn_url',
+      'about_btn_txt',
+      'services_title',
+      'services_subtitle',
+      'services_text',
+      'blog_title',
+      'blog_suptitle',
+      'blog_text',
+      'team_title',
+      'team_suptitle',
+      'team_text',
+      'partner_title',
+      'partner_suptitle',
+      'partner_text'
 
 
     ];    

@@ -67,7 +67,35 @@ class Company extends ComponentBase
 
         
         $company->careers_description = $settings->careers_description;
+        $company->trainings = $settings->trainings;
+        $company->values = $settings->values;
+        $company->consulting_areas = $settings->consulting_areas;
+        $company->favicon = $settings->favicon;
 
+
+        $company->about_title = $settings->about_title;
+        $company->about_subtitle = $settings->about_subtitle;
+        $company->about_text = $settings->about_text;
+        $company->about_secondtext = $settings->about_secondtext;
+        $company->about_btn_url = $settings->about_btn_url;
+        $company->about_btn_txt = $settings->about_btn_txt;
+        $company->services_title = $settings->services_title;
+        $company->services_subtitle = $settings->services_subtitle;
+        $company->services_text = $settings->services_text;
+        $company->blog_title = $settings->blog_title;
+        $company->blog_suptitle = $settings->blog_suptitle;
+        $company->blog_text = $settings->blog_text;
+        $company->team_title = $settings->team_title;
+        $company->team_suptitle = $settings->team_suptitle;
+        $company->team_text = $settings->team_text;
+        $company->partner_title = $settings->partner_title;
+
+        $company->partner_title = $settings->partner_title;
+        $company->partner_text = $settings->partner_text;
+        $company->partner_suptitle = $settings->partner_suptitle;
+
+
+        
         $this->page['company'] = $company;
     }
 }

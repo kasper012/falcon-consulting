@@ -1,0 +1,61 @@
+    <!---HEADER START
+==================================-->
+<header id="header" class="main-header">
+    <nav class="main-nav nav-expanded pb-0">
+    <div class="container non-container">
+    <div class="left-nav" style="min-width: 60%;">
+        <div class="nav-brand p-0">
+        <a href="{{ 'home' | page }}" class="d-flex justify-content-center" style="padding-left:10%">
+            <img src="{{ 'assets/images/horizontal_on_corporate_by_logaster.png' | theme }}" alt="navbar-logo" style="min-width: 100px;max-width: 75%;transform: scale(1.2);"/>
+        </a>
+        </div>
+
+        <input id="main-menu-state" type="checkbox" />
+        <label class="main-menu-btn" for="main-menu-state">
+        <span class="main-menu-btn-icon"></span> Toggle main menu
+        visibility
+        </label>
+        <ul id="main-menu">
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'home' | page }}">{{ 'Ana səhifə' |_ }}</a>
+        </li>
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'home' | page }}#about">{{ 'Haqqımızda' |_ }}</a>
+        </li>
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'home' | page }}#services">{{ 'Xidmətlərimiz' |_ }}</a>
+        </li>
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'home' | page }}#trainings">{{ 'Təlimlərimiz' |_ }}</a>
+        </li>
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'blog' | page }}">{{ 'Bloq' |_ }}</a>
+        </li>
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'home' | page }}#partners">{{ 'Müştərilərimiz' |_ }}</a>
+        </li>
+        <li class="menu-item">
+            <a class="nav-link" href="{{ 'home' | page }}#contacts">{{ 'Əlaqə' |_ }}</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="right-nav">
+        <div class="nav-menu">
+        <div class="contact">
+            <i class="telp-icon fas fa-phone-alt" style="line-height: 2"></i>
+            <div class="contact-text">
+            <span class="text-white small-text">{{ 'Zəng edin' |_ }}</span>
+            <a href="tel:{{ company.telephone }}" class="text-white telp-text"><b>{{ company.telephone }}</b></a>
+            </div>
+        </div>
+        <div class="contact-button">
+            {% component 'extendedLocalePicker' %}
+        </div>
+        </div>
+    </div>
+    </div>
+    </nav>
+<!-- end navbar -->
+</header>
+<!---EMD HEADER-->
