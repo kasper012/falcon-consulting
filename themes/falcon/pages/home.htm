@@ -46,12 +46,14 @@ postPage = "post"
                         {{ slider.subtitle }}
                       </p>
                     </div>
+                    {% if false %}
                     <div class="header-button">
                       <p class="learn-more">
                         <a class="text-white" href="{{ slider.btn_url }}">{{ slider.btn_txt }}</a>
                         <i class="fas fa-long-arrow-alt-right text-white"></i>
                       </p>
                     </div>
+                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -471,19 +473,14 @@ postPage = "post"
                   <hr class="left-hr mobile-hide">
                 </div>
                 <div class="column column-2 main-office">
-                  <h2 class="mb-5">{{ company.address }}</h2>
-                  <a class="appointment-telp mb-5 d-block" href="tel:{{ company.telephone }}">{{ company.telephone }}</a>
+                  <h2 class="d-block">{{ company.address }}</h2>
+                  <a class="appointment-telp d-block" href="tel:{{ company.telephone }}">{{ company.telephone }}</a>
                   <a class="text-green d-block" href="mailto:{{ company.pochta }}">{{ company.pochta }}</a>
                 </div>
 
               </div>
-              <div class="row appoitnment-form my-0">
-                <div class="column column-1 appoitnment-form my-0">
-                  <div class="column column-1 left-form">
-                    {% component 'mainContactForm' %}
-                  </div>
-
-                </div>
+              <div class="row appoitnment-form">
+                {% component 'mainContactForm' %}
               </div>
             </div>
             <div class="column column-40 map-wrap">

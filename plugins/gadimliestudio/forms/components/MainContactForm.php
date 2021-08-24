@@ -44,7 +44,9 @@ class MainContactForm extends ComponentBase
             $form = Input::all(), [
                 'name' => 'required',    
                 'phone' => 'required',    
-                'email' => 'required|email',    
+                'email' => 'required|email', 
+                'phone' => 'required|email',
+                'surname'=> 'required|email',   
                 'msg' => 'required',    
             ], $customMessages
         );

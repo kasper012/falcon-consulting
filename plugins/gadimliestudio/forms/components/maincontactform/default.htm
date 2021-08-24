@@ -1,4 +1,4 @@
-<form method="post" data-request="{{ __SELF__ }}::onSend"  data-request-validate data-request-flash>
+<!-- <form method="post" data-request="{{ __SELF__ }}::onSend"  data-request-validate data-request-flash>
     <div class="input-field">
         <input type="text" class="form-input" placeholder="{{ 'Adınız və soyadınız' }}" name="name" />
     </div>
@@ -12,4 +12,34 @@
         <textarea class="form-textarea" placeholder="{{ 'Mesaj' |_ }}" rows="13" name="msg"></textarea>
     </div>
     <button class="button style-4" type="submit">{{ 'Göndər' |_ }}</button>
-</form>
+</form> -->
+
+
+<div class="column column-1 appoitnment-form">
+    <div class="column column-2 left-form">
+      <form method="post" data-request="{{ __SELF__ }}::onSend"  data-request-validate data-request-flash>
+        <div class="input-field">
+          <input type="text" class="form-input" placeholder="{{ 'Adınız' |_ }}" name="name" />
+        </div>
+        <div class="input-field">
+            <input type="text" class="form-input" placeholder="{{ 'Soyadınız' }}" name="surname" />
+        </div>
+      
+    </div>
+    <div class="column column-2 right-form">
+        <div class="input-field">
+            <input type="text" class="form-input" placeholder="{{ 'Telefon' }}" name="phone" />
+        </div>
+        <div class="input-field">
+          <input type="text" class="form-input" placeholder="{{ 'Elektron ünvan' |_ }}" name="email" />
+        </div>
+    </div>
+    <div class="column column-1 right-form right-form-custom">
+
+        <div class="input-field">
+            <textarea class="form-textarea" rows="13" placeholder="{{ 'Mesaj' |_ }}" name="msg"></textarea>
+          </div>
+        <button class="button style-4">{{ 'Göndər' |_ }}</button>
+    </div>
+    </form>
+  </div>

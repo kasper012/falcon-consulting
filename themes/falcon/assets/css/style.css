@@ -1199,7 +1199,7 @@ button:focus {
 
 .services-card-body .card-title {
   cursor: unset;
-  line-height: 35px;
+  line-height: 22px;
   margin-bottom: 5px;
   color: #292e55;
 }
@@ -3000,7 +3000,7 @@ blockquote::before {
   font-family: "Poppins";
   margin: 0;
   font-size: 18px;
-  line-height: 36px;
+  line-height: 22px;
   margin-bottom: 7px;
 }
 
@@ -3495,7 +3495,7 @@ blockquote::before {
   font-size: 15px;
   background-color: transparent;
   border-radius: 4px;
-  border: 3px #e6ac27 solid;
+  /* border: 3px #e6ac27 solid; */
   
   /* width: 220px; */
   text-align: left;
@@ -3597,4 +3597,9 @@ blockquote::before {
 }
 .dropdown:hover {
   background-position: right center;
+}
+
+.right-form-custom {
+  padding-left: 18px;
+  padding-right: 42px;
 }
