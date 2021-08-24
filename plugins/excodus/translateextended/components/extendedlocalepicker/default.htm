@@ -1,10 +1,17 @@
-{% for code, name in locales %}
-    {% if code != activeLocale %}
-    {% if this.page.id != 'home' %}
-    <a href="{{''|app}}{{ '/' ~ code ~ localeLinks[code] }}" class="button style-11">{{ code | upper }}</a>
-    {% else %}
-    <a href="{{''|app}}{{ '/' ~ code ~ localeLinks[code] }}" class="button style-1">{{ code | upper }}</a>
-    {% endif %}
-    {% endif %}
-{% endfor %}
 
+
+<div class="dropdown" id="drop-down" sty>
+    <span>{{ activeLocale | upper }}</span>
+    <label>
+      <input type="checkbox">
+      <ul>
+        {% for code, name in locales %}
+        {% if code != activeLocale %}
+        <li>
+          <a href="{{''|app}}{{ '/' ~ code ~ localeLinks[code] }}">{{ code | upper }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </label>
+  </div>
