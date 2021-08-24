@@ -15,7 +15,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Saytdaki şəkillər',
+            'name' => 'Slayderlər',
             'description' => 'Sliders',
             'author' => 'gadimliestudio',
             'icon' => 'icon-building',
