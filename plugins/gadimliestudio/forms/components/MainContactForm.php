@@ -45,8 +45,8 @@ class MainContactForm extends ComponentBase
                 'name' => 'required',    
                 'phone' => 'required',    
                 'email' => 'required|email', 
-                'phone' => 'required|email',
-                'surname'=> 'required|email',   
+                'phone' => 'required',
+                'surname'=> 'required',   
                 'msg' => 'required',    
             ], $customMessages
         );
