@@ -580,7 +580,8 @@ button:focus {
 }
 
 .menu-item {
-  margin-right: 5%;
+  /* margin-right: 5%; */
+  width: auto !important;
 }
 
 .menu-item-white {
@@ -599,6 +600,7 @@ button:focus {
   color: #fff;
   font-weight: 500;
   transition: 0.4s;
+  width: auto !important;
 }
 
 .nav-link:hover {
@@ -3290,7 +3292,7 @@ blockquote::before {
   justify-content: center !important;
 }
 .justify-content-around {
-  justify-content: space-around;
+  justify-content: space-around !important;
 }
 
 .justify-content-between {
@@ -3602,4 +3604,14 @@ blockquote::before {
 .right-form-custom {
   padding-left: 18px;
   padding-right: 42px;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+.w-auto {
+  width: auto !important;
+}
+.d-none {
+  display: none !important;
 }
