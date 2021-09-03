@@ -19,11 +19,19 @@
                           <div class="column column-4 footer-widget-component">
                             <p class="footer-title text-white">{{ 'Əlaqə saxlayın' |_ }}</p>
                             <hr class="left-hr" />
-                            <p class="footer-text"><b>{{ company.telephone }}</b></p>
+                            <p class="footer-text"><b>
+                              <a href="tel:{{ company.telephone }}" class="text-gray">
+                                {{ company.telephone }}
+                              </a>
+                            </b></p>
                             <p class="footer-text">
                               {{ company.address }}
                             </p>
-                            <p class="footer-text footer-email">{{ company.pochta }}</p>
+                            <p class="footer-text footer-email">
+                              <a href="mailto:{{ company.pochta }}" class="text-gray">
+                                {{ company.pochta }}
+                              </a>
+                            </p>
                           </div>
                           <div class="column column-4 footer-widget-component">
                             <p class="footer-title text-white">{{ 'Axırincı xəbərlər' |_ }}</p>

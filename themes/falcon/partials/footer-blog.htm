@@ -10,12 +10,12 @@ postPage = "post"
     {% for post in blogPosts.posts %}
     <div class="row footer-news-item mt-2">
       <div class="img-zoom-wrapper">
-        <a href="singlePost.html">
+        <a href="{{ post.url }}">
           <img class="footer-news-img" src="{{ post.featured_images[0].path }}" alt="footer-news-img" />
         </a>
       </div>
       <div class="footer-news-text">
-        <a class="footer-news-title" href="{{ post.title }}">{{ post.title }}</a>
+        <a class="footer-news-title" href="{{ post.url }}">{{ post.title }}</a>
         <p class="footer-news-date footer-text">
             {{ post.published_at|date('d/m/Y') }}
         </p>

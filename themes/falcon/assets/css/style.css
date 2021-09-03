@@ -3615,3 +3615,7 @@ blockquote::before {
 .d-none {
   display: none !important;
 }
+
+.text-gray {
+  color: #aaaaaa;
+}

@@ -41,9 +41,9 @@ categoryPage = "category"
                   <span class="post-date"> {{ post.published_at |date('d/m/Y') }}</span>
                 </div>
               </div>
-              <div class="blogPost-body">
-                {{ post.content | raw }}
-              </div>
+              <article class="blogPost-body">
+                <p>{{ post.content }}</p>
+              </article>
               <div class="blogPost-tag-wrapper">
 
               </div>

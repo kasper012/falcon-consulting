@@ -30,7 +30,7 @@
             <a class="nav-link" href="{{ 'blog' | page }}">{{ 'Bloq' |_ }}</a>
         </li>
         <li class="menu-item">
-            <a class="nav-link" href="{{ 'home' | page }}#partners">{{ 'Müştərilərimiz' |_ }}</a>
+            <a class="nav-link" href="{{ 'home' | page }}#team">{{ 'Komandamız' |_ }}</a>
         </li>
         <li class="menu-item">
             <a class="nav-link" href="{{ 'home' | page }}#contacts">{{ 'Əlaqə' |_ }}</a>
@@ -45,7 +45,7 @@
         <div class="nav-menu">
                 {% component 'extendedLocalePicker' %}
               <div class="contact-button">
-                <a href="{{ 'contact' | page }}" class="button style-1">{{ 'Əlaqə saxlayın' |_ }}</a>
+                <a href="/{{ activeLocale }}#contacts" class="button style-1">{{ 'Əlaqə saxlamayın' |_ }}</a>
               </div>
         </div>
     </div>

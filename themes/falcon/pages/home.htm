@@ -474,8 +474,10 @@ postPage = "post"
                 </div>
                 <div class="column column-2 main-office">
                   <h2 class="d-block">{{ company.address }}</h2>
+                  {% if false %}
                   <a class="appointment-telp d-block" href="tel:{{ company.telephone }}">{{ company.telephone }}</a>
-                  <a class="text-green d-block" href="mailto:{{ company.pochta }}">{{ company.pochta }}</a>
+                  {% endif %}
+                  <a class="text-green d-block pt-2" href="mailto:{{ company.pochta }}">{{ company.pochta }}</a>
                 </div>
 
               </div>
