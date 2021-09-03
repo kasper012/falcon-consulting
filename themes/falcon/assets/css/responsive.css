@@ -1302,7 +1302,7 @@
     position: absolute;
     z-index: -1;
     padding: 45px 20px 0;
-    top: 75%;
+    top: 25vh;
     width: -webkit-fill-available;
   }
 
@@ -1326,7 +1326,7 @@
   }
 
   .nav-expanded {
-    background-color: rgb(72,59,43);
+    background-color: rgba(0,0,0,0.3);
     height: 70px;
     -webkit-transition: height, 0.25s linear;
     -moz-transition: height, 0.25s linear;
@@ -2019,6 +2019,7 @@
     height: 100%;
     position: fixed;
     z-index: 100;
+    top: 0;
   }
 
   .main-nav #main-menu {
@@ -3663,4 +3664,14 @@
     .languages-moblie {
         display: none;
     }
+}
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-desktop {
+    display: none !important;
+  }
 }

@@ -3505,7 +3505,11 @@ blockquote::before {
   height: 40px;
   margin-right: 20px !important;
 }
-
+@media (max-width: 768px) {
+  .dropdown {
+    margin-right: 0 !important;
+  }
+}
 .dropdown > a,
 .dropdown > span {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3619,3 +3623,4 @@ blockquote::before {
 .text-gray {
   color: #aaaaaa;
 }
+

@@ -1,7 +1,57 @@
     <!---HEADER START
 ==================================-->
 <header id="header" class="main-header">
-    <nav class="main-nav nav-expanded h-100">
+    <nav class="main-nav nav-expanded h-100 mobile-nav">
+        <div class="container non-container">
+        <div class="left-nav" style="min-width: 60%;">
+            <div class="nav-brand p-0">
+            <a href="{{ 'home' | page }}" class="d-flex justify-content-center" style="padding-left:10%">
+                <img src="{{ 'assets/images/horizontal_on_corporate_by_logaster_trans.png' | theme }}" alt="navbar-logo" >
+            </a>
+            </div>
+    
+            <input id="main-menu-state" type="checkbox" />
+            <label class="main-menu-btn" for="main-menu-state">
+            <span class="main-menu-btn-icon"></span> Toggle main menu
+            visibility
+            </label>
+            <ul id="main-menu">
+    
+            <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#about">{{ 'Haqqımızda' |_ }}</a>
+            </li>
+            <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#services">{{ 'Xidmətlərimiz' |_ }}</a>
+            </li>
+            <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#trainings">{{ 'Təlimlərimiz' |_ }}</a>
+            </li>
+            <li class="menu-item">
+                <a class="nav-link" href="{{ 'blog' | page }}">{{ 'Bloq' |_ }}</a>
+            </li>
+            <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#partners">{{ 'Müştərilərimiz' |_ }}</a>
+            </li>
+            <li class="menu-item">
+                <a class="nav-link" href="{{ 'home' | page }}#contacts">{{ 'Əlaqə' |_ }}</a>
+            </li>
+            <div class="contact-button languages-moblie">
+                {% component 'extendedLocalePicker' %}
+            </div>
+            </ul>
+        </div>
+    
+        <div class="right-nav">
+            <div class="nav-menu">
+                    {% component 'extendedLocalePicker' %}
+                  <div class="contact-button">
+                    <a href="{{ 'contact' | page }}" class="button style-1">{{ 'Əlaqə saxlayın' |_ }}</a>
+                  </div>
+            </div>
+        </div>
+        </div>
+        </nav>
+    <nav class="main-nav nav-expanded h-100 mobile-desktop">
     <div class="container non-container">
     <div class="left-nav" style="min-width: 75%;">
         <div class="nav-brand p-0">
