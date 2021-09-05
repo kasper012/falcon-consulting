@@ -42,7 +42,9 @@ categoryPage = "category"
                 </div>
               </div>
               <article class="blogPost-body">
-                <p>{{ post.content }}</p>
+                <p>
+                  {{ post.content_html | raw }}
+                </p>
               </article>
               <div class="blogPost-tag-wrapper">
 

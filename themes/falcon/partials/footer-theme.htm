@@ -20,7 +20,7 @@
                             <p class="footer-title text-white">{{ 'Əlaqə saxlayın' |_ }}</p>
                             <hr class="left-hr" />
                             <p class="footer-text"><b>
-                              <a href="tel:{{ company.telephone }}" class="text-gray">
+                              <a href="tel:{{ company.telephone | replace({' ':''})}}" class="text-gray">
                                 {{ company.telephone }}
                               </a>
                             </b></p>
