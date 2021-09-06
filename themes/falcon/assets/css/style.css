@@ -1190,6 +1190,7 @@ button:focus {
 
 .service-images .services-card-img {
   padding: 0 15px;
+  border-radius: 50%;
 }
 
 .card-images {

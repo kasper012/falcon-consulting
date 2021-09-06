@@ -28,14 +28,7 @@ tabs:
                         label: Başlıq üstündəki yazı
                         span: storm
                         cssClass: col-md-4
-                    btn_txt:
-                        label: Düymənin məzmunu
-                        span: storm
-                        cssClass: col-md-6
-                    btn_url: 
-                        label: Düymənin linki
-                        span: storm
-                        cssClass: col-md-6
+
                     image: 
                         label: Şəkil
                         span: storm
