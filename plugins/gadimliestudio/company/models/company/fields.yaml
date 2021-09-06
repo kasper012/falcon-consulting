@@ -72,6 +72,15 @@ tabs:
             label: Haqqımızda bölməsində düymənin məzmunu
             span: storm
             cssClass: col-md-6
+        values:
+            tab: Haqqımızda
+            label: Dəyərlər
+            span: storm
+            cssClass: col-md-12
+            type: repeater
+            form:
+                fields:
+                    value:
         # bloq
         blog_title:
             tab: Bloq
@@ -169,9 +178,7 @@ tabs:
                     image:
                         label: Şəkil
                         type: mediafinder
-                    description:
-                        label: Təsvir
-                        type: richeditor
+
 
         services_title:
             tab:  Məsləhət xidmətlərimizin sahələri

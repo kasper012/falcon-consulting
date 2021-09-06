@@ -123,42 +123,17 @@ postPage = "post"
                   <br>
                   <div class="container office-info-wrapper clearfix">
                     <div class="row">
+                      {% for value in company.values %}
                       <div class="office-site-card office-site-card-custom ">
 
                         <div class="site-text">
-                          <p class="text-bold site-type">{{'Peşəkarlıq' |_}}</p>
+                          <p class="text-bold site-type">{{ value.value }}</p>
                           <p class="site-address">
 
                           </p>
                         </div>
                       </div>
-                      <div class="office-site-card office-site-card-custom ">
-
-                        <div class="site-text">
-                          <p class="text-bold site-type">{{'Vicdanlıq'|_}}</p>
-                          <p class="site-address">
-
-                          </p>
-                        </div>
-                      </div>
-                      <div class="office-site-card office-site-card-custom ">
-
-                        <div class="site-text">
-                          <p class="text-bold site-type">{{'Məsuliyyətlik' |_}}</p>
-                          <p class="site-address">
-
-                          </p>
-                        </div>
-                      </div>
-                      <div class="office-site-card office-site-card-custom ">
-
-                        <div class="site-text">
-                          <p class="text-bold site-type">{{'Davamlı özünüinkişaf' |_}}</p>
-                          <p class="site-address">
-
-                          </p>
-                        </div>
-                      </div>
+                      {% endfor %}
                     </div>
                   </div>
                   </ul>
