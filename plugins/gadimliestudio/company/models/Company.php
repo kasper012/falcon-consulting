@@ -49,7 +49,7 @@ class Company extends Model
       'partner_title',
       'partner_suptitle',
       'partner_text'
-
+      'values',
 
     ];    
 
