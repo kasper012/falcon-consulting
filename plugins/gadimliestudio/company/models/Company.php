@@ -48,7 +48,7 @@ class Company extends Model
       'team_text',
       'partner_title',
       'partner_suptitle',
-      'partner_text'
+      'partner_text',
       'values',
 
     ];    
