@@ -192,7 +192,7 @@ postPage = "post"
               <div class="row">
 
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  {% for area in company.consulting_areas | slice(0,2)  %}
+                  {% for area in company.consulting_areas   %}
                   <div class="services-card">
                     <div class="service-images">
                       <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image"
@@ -209,46 +209,7 @@ postPage = "post"
                   </div>
                   {% endfor %}
                 </div>
-                <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  {% for area in company.consulting_areas  %}
-                  {% if loop.index >2 and loop.index <=4 %}
-                  <div class="services-card three-four">
-                    <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image "
-                        width="70" height="70"/>
-                    </div>
-                    <div class="service-desc">
-                      <div class="services-card-body">
-                        <p class="card-title">{{ area.title }}</p>
-                        <p class="service-card-desc">
-                          {{ area.description | raw }}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {% endif %}
-                  {% endfor %}
-                </div>
-                <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  {% for area in company.consulting_areas  %}
-                  {% if loop.index > 4 and loop.index <=6 %}
-                  <div class="services-card five-six">
-                    <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image "
-                        width="70" height="70"/>
-                    </div>
-                    <div class="service-desc">
-                      <div class="services-card-body">
-                        <p class="card-title">{{ area.title }}</p>
-                        <p class="service-card-desc">
-                          {{ area.description | raw }}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {% endif %}
-                  {% endfor %}
-                </div>
+
               </div>
             </div>
           </div>

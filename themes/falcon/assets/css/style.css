@@ -1170,11 +1170,12 @@ button:focus {
 .service-card-wrapper {
   display: flex;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .services-card {
   display: flex;
-  /* width: 50%; */
+  width: 42%;
   text-align: left;
   background-color: #fff;
   border-radius: 10px;
