@@ -1,6 +1,7 @@
 <?php namespace Backend\Widgets;
 
 use Lang;
+use Throwable;
 use Backend\Classes\WidgetBase;
 
 /**
@@ -66,6 +67,11 @@ class Search extends WidgetBase
     public $cssClasses = [];
 
     /**
+     * @var string listWidgetId
+     */
+    public $listWidgetId;
+
+    /**
      * Initialize the widget, called by the constructor and free from its parameters.
      */
     public function init()
@@ -82,6 +88,14 @@ class Search extends WidgetBase
         if ($this->growable) {
             $this->cssClasses[] = 'growable';
         }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function loadAssets()
+    {
+        $this->addJs('js/october.search.js', 'core');
     }
 
     /**
@@ -123,7 +137,14 @@ class Search extends WidgetBase
          * Trigger class event, merge results as viewable array
          */
         $params = func_get_args();
-        $result = $this->fireEvent('search.submit', [$params]);
+        try {
+            $result = $this->fireEvent('search.submit', [$params]);
+        }
+        catch (Throwable $e) {
+            $this->setActiveTerm('');
+            throw $e;
+        }
+
         if ($result && is_array($result)) {
             return call_user_func_array('array_merge', $result);
         }

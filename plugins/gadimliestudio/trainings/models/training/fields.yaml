@@ -1,0 +1,41 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    image:
+        label: Trainings image
+        type: mediafinder
+        span: storm
+        cssClass: col-md-6
+    title:
+        label: Trainings title
+        span: storm
+        cssClass: col-md-6
+    who_its_for:
+        label: Who it’s for
+        type: richeditor
+    duration:
+        label: Duration
+        type: richeditor
+    content:
+        label: Content
+        type: richeditor
+
+
+        
+
+
+
+    
+
+
+
+
+
+    
+

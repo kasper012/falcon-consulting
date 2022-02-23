@@ -35,8 +35,7 @@ use Twig\Extension\SandboxExtension;
 class ServiceProvider extends ModuleServiceProvider
 {
     /**
-     * Register the service provider.
-     *
+     * register the service provider.
      * @return void
      */
     public function register()
@@ -82,8 +81,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Bootstrap the module events.
-     *
+     * boot the module events.
      * @return void
      */
     public function boot()
@@ -110,7 +108,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Forget singletons that may linger from previous instances,
+     * forgetSingletons that may linger from previous instances,
      * useful for testing and booting secondary instances
      */
     protected function forgetSingletons()
@@ -120,7 +118,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Register singletons
+     * registerSingletons
      */
     protected function registerSingletons()
     {
@@ -145,8 +143,8 @@ class ServiceProvider extends ModuleServiceProvider
         });
     }
 
-    /*
-     * Register markup tags
+    /**
+     * registerMarkupTags
      */
     protected function registerMarkupTags()
     {
@@ -203,7 +201,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Register command line specifics
+     * registerConsole command line specifics
      */
     protected function registerConsole()
     {
@@ -211,11 +209,6 @@ class ServiceProvider extends ModuleServiceProvider
          * Allow plugins to use the scheduler
          */
         Event::listen('console.schedule', function ($schedule) {
-            // Halt if database has not migrated yet
-            if (!SystemHelper::hasDatabase()) {
-                return;
-            }
-
             $plugins = PluginManager::instance()->getPlugins();
             foreach ($plugins as $plugin) {
                 if (method_exists($plugin, 'registerSchedule')) {
@@ -255,19 +248,18 @@ class ServiceProvider extends ModuleServiceProvider
         $this->registerConsoleCommand('plugin.check', \System\Console\PluginCheck::class);
     }
 
-    /*
-     * Error handling for uncaught Exceptions
+    /**
+     * registerErrorHandler for uncaught Exceptions
      */
     protected function registerErrorHandler()
     {
         Event::listen('exception.beforeRender', function ($exception, $httpCode, $request) {
-            $handler = new ErrorHandler;
-            return $handler->handleException($exception);
+            return (new ErrorHandler)->handleException($exception);
         });
     }
 
-    /*
-     * Write all log events to the database
+    /**
+     * registerLogging writes all log events to the database
      */
     protected function registerLogging()
     {
@@ -278,8 +270,8 @@ class ServiceProvider extends ModuleServiceProvider
         });
     }
 
-    /*
-     * Register text twig parser
+    /**
+     * registerTwigParser
      */
     protected function registerTwigParser()
     {
@@ -313,7 +305,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Register mail templating and settings override.
+     * registerMailer templating and settings override.
      */
     protected function registerMailer()
     {
@@ -354,8 +346,8 @@ class ServiceProvider extends ModuleServiceProvider
         });
     }
 
-    /*
-     * Register navigation
+    /**
+     * registerBackendNavigation
      */
     protected function registerBackendNavigation()
     {
@@ -394,8 +386,8 @@ class ServiceProvider extends ModuleServiceProvider
         }, -9999);
     }
 
-    /*
-     * Register report widgets
+    /**
+     * registerBackendReportWidgets
      */
     protected function registerBackendReportWidgets()
     {
@@ -407,8 +399,8 @@ class ServiceProvider extends ModuleServiceProvider
         });
     }
 
-    /*
-     * Register permissions
+    /**
+     * registerBackendPermissions
      */
     protected function registerBackendPermissions()
     {
@@ -434,8 +426,8 @@ class ServiceProvider extends ModuleServiceProvider
         });
     }
 
-    /*
-     * Register settings
+    /**
+     * registerBackendSettings
      */
     protected function registerBackendSettings()
     {
@@ -525,7 +517,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Register asset bundles
+     * registerAssetBundles
      */
     protected function registerAssetBundles()
     {
@@ -540,7 +532,7 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * Extends the validator with custom rules
+     * registerValidator extends the validator with custom rules
      */
     protected function registerValidator()
     {
@@ -560,15 +552,17 @@ class ServiceProvider extends ModuleServiceProvider
         });
     }
 
+    /**
+     * registerGlobalViewVars
+     */
     protected function registerGlobalViewVars()
     {
         View::share('appName', Config::get('app.name'));
     }
 
-
     /**
-     * Allows the database config to specify a max length for VARCHAR
-     * Primarily used by MariaDB (<10.2) and MySQL (<5.7)
+     * applyDatabaseDefaultStringLength allows the database config to specify a max length
+     * for VARCHAR. Primarily used by MariaDB (<10.2) and MySQL (<5.7)
      * @todo This should be moved to the core library
      */
     protected function applyDatabaseDefaultStringLength()

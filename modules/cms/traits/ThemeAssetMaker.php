@@ -1,6 +1,7 @@
 <?php namespace Cms\Traits;
 
 use Url;
+use File;
 use Config;
 use System\Classes\CombineAssets;
 
@@ -71,6 +72,16 @@ trait ThemeAssetMaker
                 continue;
             }
 
+            // Path symbol
+            if (File::isPathSymbol($url)) {
+                continue;
+            }
+
+            // Fully qualified local path
+            if (file_exists($url)) {
+                continue;
+            }
+
             // Parent asset
             if ($theme->useParentAsset($url)) {
                 $url = $theme->getParentTheme()->getPath().'/'.$url;
@@ -100,7 +111,7 @@ trait ThemeAssetMaker
         // Configuration for theme asset location
         $assetUrl = Config::get('system.themes_asset_url');
 
-        if ($assetUrl === null) {
+        if (!$assetUrl) {
             $assetUrl = Config::get('app.asset_url').'/themes';
         }
 

@@ -212,14 +212,6 @@ class AuthManager extends RainAuthManager
     /**
      * {@inheritdoc}
      */
-    public function impersonate($user)
-    {
-        throw new SystemException('Cannot impersonate backend user for security reasons. Please impersonate a role instead.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function createUserModelQuery()
     {
         return parent::createUserModelQuery()->withTrashed();
@@ -231,6 +223,10 @@ class AuthManager extends RainAuthManager
     protected function validateUserModel($user)
     {
         if (!$user instanceof $this->userModel) {
+            return false;
+        }
+
+        if ($user->deleted_at !== null) {
             return false;
         }
 
