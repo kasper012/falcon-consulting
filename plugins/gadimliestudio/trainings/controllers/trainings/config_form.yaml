@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Training
+
+# Model Form Field configuration
+form: $/gadimliestudio/trainings/models/training/fields.yaml
+
+# Model Class name
+modelClass: Gadimliestudio\Trainings\Models\Training
+
+# Default redirect location
+defaultRedirect: gadimliestudio/trainings/trainings
+
+# Create page
+create:
+    title: New training
+    redirect: gadimliestudio/trainings/trainings/update/:id
+    redirectClose: gadimliestudio/trainings/trainings
+
+# Update page
+update:
+    title: Change the training
+    redirect: gadimliestudio/trainings/trainings
+    redirectClose: gadimliestudio/trainings/trainings
+
+# Preview page
+preview:
+    title: Show

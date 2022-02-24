@@ -55,9 +55,11 @@ class MediaFinder extends FormWidgetBase
             'mode'
         ]);
 
-        $user = BackendAuth::getUser();
+        if ($this->formField->disabled || $this->formField->readOnly) {
+            $this->previewMode = true;
+        }
 
-        if ($this->formField->disabled || !$user || !$user->hasAccess('media.manage_media')) {
+        if ((!$user = BackendAuth::getUser()) || !$user->hasAccess('media.manage_media')) {
             $this->previewMode = true;
         }
     }
@@ -87,18 +89,6 @@ class MediaFinder extends FormWidgetBase
         $this->vars['mode'] = $this->mode;
         $this->vars['imageWidth'] = $this->imageWidth;
         $this->vars['imageHeight'] = $this->imageHeight;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getSaveValue($value)
-    {
-        if ($this->formField->disabled || $this->formField->hidden) {
-            return FormField::NO_SAVE_DATA;
-        }
-
-        return $value;
     }
 
     /**

@@ -6,7 +6,6 @@ title = "Home"
 localeTitle[en] = "Home"
 localeTitle[ru] = "Главная"
 
-
 [Sliders]
 [blogPosts]
 pageNumber = "{{ :page }}"
@@ -167,7 +166,7 @@ postPage = "post"
               <div class="row">
 
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
-                  {% for area in company.consulting_areas   %}
+                  {% for service in company.consulting_areas   %}
                   <div class="services-card">
                     <div class="service-images">
                       <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image"
@@ -191,6 +190,7 @@ postPage = "post"
         </div>
       </section>
       <!---END SERVICES-->
+      {{services}}
       <section class="Services-list" id="trainings">
         <div class="container">
           <div class="about-section-title ">
@@ -198,8 +198,8 @@ postPage = "post"
           </div>
           <hr class="left-hr mb-5" />
           <div class="row service-loop-wrap clearfix">
-            {% for training in company.trainings %}
-            <div class="column column-3 service-card-tablet">
+            {% for training in trainings %}
+            <div class="column column-3 service-card-tablet"><a href="{{ 'services-detailed'| page({id: training.id})}}">
               <div class="service-cards card">
                 <div class="card-img-top img-zoom-wrapper">
                   <img class="service-card-img card-img" src="{{ training.image | media }}"
@@ -209,11 +209,12 @@ postPage = "post"
                   {% if false %}
                   <div class="serviceman-name">
                     <p>By <span class="s-name">Daniel Zelda</span></p>
+                  </a>
                   </div>
                   {% endif %}
                   <div class="service-card-title mt-4">
                     
-                      <h3 class="text-bold">{{ training.name }}</h3>
+                      <h3 class="text-bold">{{ training.title }}</h3>
                     
                   </div>
                   {% if false %}

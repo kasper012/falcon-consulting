@@ -1,5 +1,7 @@
 <?php namespace Cms\Classes;
 
+use Db;
+use Lang;
 use Yaml;
 use File;
 use System;
@@ -29,6 +31,29 @@ class ThemeManager
      * @var array themes is for storing installed themes cache
      */
     protected $themeDirs;
+
+    /**
+     * bootAllBackend will boot language messages for the active theme as `theme.acme::lang.*`
+     */
+    public function bootAllBackend()
+    {
+        $theme = CmsTheme::getActiveTheme();
+        if (!$theme) {
+            return;
+        }
+
+        $langPath = $theme->getPath() . '/lang';
+        if (File::isDirectory($langPath)) {
+            Lang::addNamespace("theme.{$theme->getId()}", $langPath);
+        }
+
+        if ($parent = $theme->getParentTheme()) {
+            $langPath = $parent->getPath() . '/lang';
+            if (File::isDirectory($langPath)) {
+                Lang::addNamespace("theme.{$parent->getId()}", $langPath);
+            }
+        }
+    }
 
     /**
      * getInstalled returns a collection of themes installed
@@ -280,6 +305,42 @@ class ThemeManager
         File::put($childYaml, Yaml::render($yaml));
 
         return true;
+    }
+
+    /**
+     * importDatabaseTemplates
+     */
+    public function importDatabaseTemplates(string $dirName, string $srcDirName = null)
+    {
+        if (!$srcDirName) {
+            $srcDirName = $dirName;
+        }
+
+        $theme = CmsTheme::load($dirName);
+        $themePath = $theme->getPath();
+        if (!$themePath) {
+            return;
+        }
+
+        $templates = Db::table('cms_theme_templates')->where('source', $srcDirName)->get();
+
+        foreach ($templates as $template) {
+            $filePath = $themePath . '/' . $template->path;
+            if ($template->deleted_at) {
+                File::delete($filePath);
+            }
+            else {
+                File::put($filePath, $template->content);
+            }
+        }
+    }
+
+    /**
+     * purgeDatabaseTemplates
+     */
+    public function purgeDatabaseTemplates(string $dirName)
+    {
+        Db::table('cms_theme_templates')->where('source', $dirName)->delete();
     }
 
     /**

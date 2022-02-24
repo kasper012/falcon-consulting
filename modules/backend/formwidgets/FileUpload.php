@@ -7,6 +7,7 @@ use Validator;
 use Backend\Widgets\Form;
 use Backend\Classes\FormField;
 use Backend\Classes\FormWidgetBase;
+use System\Models\File as FileModel;
 use October\Rain\Filesystem\Definitions as FileDefinitions;
 use ApplicationException;
 use ValidationException;
@@ -54,7 +55,7 @@ class FileUpload extends FormWidgetBase
     public $mimeTypes = false;
 
     /**
-     * @var mixed maxFilesize allowed
+     * @var mixed maxFilesize allowed (MB)
      */
     public $maxFilesize;
 
@@ -67,7 +68,7 @@ class FileUpload extends FormWidgetBase
      * @var array thumbOptions used for generating thumbnails
      */
     public $thumbOptions = [
-        'mode'      => 'crop',
+        'mode' => 'crop',
         'extension' => 'auto'
     ];
 
@@ -105,6 +106,8 @@ class FileUpload extends FormWidgetBase
         $this->maxFilesize = $this->getUploadMaxFilesize();
 
         $this->fillFromConfig([
+            'imageWidth',
+            'imageHeight',
             'fileTypes',
             'maxFilesize',
             'maxFiles',
@@ -143,10 +146,12 @@ class FileUpload extends FormWidgetBase
             $this->useCaption = false;
         }
 
-        if ($this->maxFilesize > $this->getUploadMaxFilesize()) {
-            throw new ApplicationException('Maximum allowed size for uploaded files: ' . $this->getUploadMaxFilesize());
+        $maxPhpSetting = $this->getUploadMaxFilesize();
+        if ($maxPhpSetting && $this->maxFilesize > $maxPhpSetting) {
+            throw new ApplicationException('Maximum allowed size for uploaded files: ' . $maxPhpSetting);
         }
 
+        $this->vars['size'] = $this->formField->size;
         $this->vars['fileList'] = $fileList = $this->getFileList();
         $this->vars['singleFile'] = $fileList->first();
         $this->vars['displayMode'] = $this->getDisplayMode();
@@ -157,7 +162,6 @@ class FileUpload extends FormWidgetBase
         $this->vars['maxFilesize'] = $this->maxFilesize;
         $this->vars['maxFiles'] = $this->maxFiles;
         $this->vars['cssDimensions'] = $this->getCssDimensions();
-        $this->vars['cssBlockDimensions'] = $this->getCssDimensions('block');
         $this->vars['useCaption'] = $this->useCaption;
     }
 
@@ -239,10 +243,9 @@ class FileUpload extends FormWidgetBase
 
     /**
      * getCssDimensions for the uploaded image, uses auto where no dimension is provided
-     * @param string $mode
      * @return string
      */
-    protected function getCssDimensions($mode = null)
+    protected function getCssDimensions()
     {
         if (!$this->imageWidth && !$this->imageHeight) {
             return '';
@@ -250,23 +253,12 @@ class FileUpload extends FormWidgetBase
 
         $cssDimensions = '';
 
-        if ($mode == 'block') {
-            $cssDimensions .= $this->imageWidth
-                ? 'width: '.$this->imageWidth.'px;'
-                : 'width: '.$this->imageHeight.'px;';
-
-            $cssDimensions .= ($this->imageHeight)
-                ? 'max-height: '.$this->imageHeight.'px;'
-                : 'height: auto;';
+        if ($this->imageWidth && !$this->imageHeight) {
+            $cssDimensions .= 'width: '.$this->imageWidth.'px;';
         }
-        else {
-            $cssDimensions .= $this->imageWidth
-                ? 'width: '.$this->imageWidth.'px;'
-                : 'width: auto;';
 
-            $cssDimensions .= ($this->imageHeight)
-                ? 'max-height: '.$this->imageHeight.'px;'
-                : 'height: auto;';
+        if ($this->imageHeight && !$this->imageWidth) {
+            $cssDimensions .= 'height: '.$this->imageHeight.'px;';
         }
 
         return $cssDimensions;
@@ -290,7 +282,7 @@ class FileUpload extends FormWidgetBase
             $types = implode(',', FileDefinitions::get($definitionCode));
         }
 
-        if (!$types || $types == '*') {
+        if (!$types || $types === '*') {
             return null;
         }
 
@@ -352,8 +344,6 @@ class FileUpload extends FormWidgetBase
             $this->vars['file'] = $file;
             $this->vars['displayMode'] = $this->getDisplayMode();
             $this->vars['cssDimensions'] = $this->getCssDimensions();
-            $this->vars['relationManageId'] = post('manage_id');
-            $this->vars['relationField'] = post('_relation_field');
 
             return $this->makePartial('config_form');
         }
@@ -419,7 +409,7 @@ class FileUpload extends FormWidgetBase
             $fileModel = $this->getRelationModel();
             $uploadedFile = Input::file('file_data');
 
-            $validationRules = ['max:'.$fileModel::getMaxFilesize()];
+            $validationRules = ['max:'.($this->maxFilesize * 1024)];
             if ($fileTypes = $this->getAcceptedFileTypes()) {
                 $validationRules[] = 'extensions:'.$fileTypes;
             }
@@ -499,17 +489,9 @@ class FileUpload extends FormWidgetBase
 
     /**
      * getUploadMaxFilesize returns max upload filesize in MB
-     * @return integer
      */
-    protected function getUploadMaxFilesize()
+    protected function getUploadMaxFilesize(): float
     {
-        $size = ini_get('upload_max_filesize');
-        if (preg_match('/^([\d\.]+)([KMG])$/i', $size, $match)) {
-            $pos = array_search($match[2], ['K', 'M', 'G']);
-            if ($pos !== false) {
-                $size = $match[1] * pow(1024, $pos + 1);
-            }
-        }
-        return floor($size / 1024 / 1024);
+        return FileModel::getMaxFilesize() / 1024;
     }
 }
