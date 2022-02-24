@@ -8,24 +8,24 @@ fields:
         disabled: true
         hidden: true
     image:
-        label: Trainings image
+        label: Şəkil
         type: mediafinder
         span: storm
         cssClass: col-md-6
     title:
-        label: Trainings title
+        label: Başlıq
         span: storm
         cssClass: col-md-6
     who_its_for:
-        label: Who it’s for
+        label: Kimin üçün nəzərdə tutulub
         type: richeditor
         cssClass: col-md-12
     duration:
-        label: Duration
+        label: Müddət
         type: richeditor
         cssClass: col-md-12
     content:
-        label: Content
+        label: Məzmun
         type: richeditor
         cssClass: col-md-12
 
