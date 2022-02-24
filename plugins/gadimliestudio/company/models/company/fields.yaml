@@ -184,7 +184,7 @@ tabs:
             tab:  Məsləhət xidmətlərimizin sahələri
             label: Xidmətlər bölməsində başlıq
             span: storm
-            cssClass: col-md-12
+            cssClass: col-md-6
         services_subtitle:
             tab:  Məsləhət xidmətlərimizin sahələri
             label: Xidmətlər bölməsində başlıq altında yazı
@@ -195,7 +195,7 @@ tabs:
             label: Xidmətlər bölməsində mətn
             type: richeditor
             span: storm
-            cssClass: col-md-6
+            cssClass: col-md-12
         consulting_areas:
             tab: Məsləhət xidmətlərimizin sahələri
             type: repeater
