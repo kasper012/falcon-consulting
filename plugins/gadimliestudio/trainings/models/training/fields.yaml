@@ -19,12 +19,15 @@ fields:
     who_its_for:
         label: Who it’s for
         type: richeditor
+        cssClass: col-md-12
     duration:
         label: Duration
         type: richeditor
+        cssClass: col-md-12
     content:
         label: Content
         type: richeditor
+        cssClass: col-md-12
 
 
         

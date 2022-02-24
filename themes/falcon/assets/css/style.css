@@ -2245,11 +2245,18 @@ option {
   margin-bottom: 68px;
 }
 
+.service-content-wrapper p {
+  display: inline-block;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
 /* 6.1.1 Service Title / .single-title-wrapper */
 .service-title-wrapper {
-  background-color: #f5f9fd;
-  padding: 78px 0;
-  margin-bottom: 76px;
+  /* background-color: #f5f9fd; */
+  padding: 0px 0 40px;
+  /* margin-bottom: 76px; */
 }
 
 .service-title p {
@@ -2259,7 +2266,7 @@ option {
 
 .service-title h1 {
   font-size: 42px;
-  line-height: 0;
+  line-height: 1;
 }
 
 .service-post p {

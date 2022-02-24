@@ -10,16 +10,17 @@ class Training extends Model
     use \October\Rain\Database\Traits\Validation;
 
      public $implement = [
-         //'RainLab.Translate.Behaviors.TranslatableModel'
+         'RainLab.Translate.Behaviors.TranslatableModel'
        ];
     
-    // public $translatable = [
-    //     'title',
-    //     'requirements',
-    //     'info'
+    public $translatable = [
+        'title',
+        'who_its_for',
+        'duration',
+        'content'
         
 
-    // ];
+    ];
 
     /**
      * @var string The database table used by the model.
