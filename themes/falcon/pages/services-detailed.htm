@@ -62,15 +62,15 @@ $this['training'] = $training;
                 </p> -->
                 <div class="service-content-wrapper">
                   <p class="fw-700">
-                    For whom is it: &nbsp;{{ training.who_its_for | raw }}
+                    {{ 'Kimin üçün nəzərdə tutulub' |_ }}: &nbsp;{{ training.who_its_for | raw }}
                   </p>
-                  <br>          
+                  <hr>          
                   <p class="fw-700">
-                    Duration: &nbsp; {{ training.duration | raw }}
+                    {{ 'Müddət' |_ }}: &nbsp; {{ training.duration | raw }}
                   </p>
-                  <br>
+                  <hr>
                   <p class="fw-700">
-                    Content: &nbsp; {{ training.content | raw }}
+                    {{ 'Məzmun' |_ }}: &nbsp; {{ training.content | raw }}
                   </p>
                 </div>
               </div>

@@ -2245,10 +2245,16 @@ option {
   margin-bottom: 68px;
 }
 
-.service-content-wrapper p {
-  display: inline-block;
+.service-content-wrapper {
+  margin: 50px 0;
 }
-
+.service-content-wrapper p {
+  display: inline !important;
+}
+.service-content-wrapper hr {
+  margin: 10px 0;
+  width: 0;
+}
 .fw-700 {
   font-weight: 700;
 }
