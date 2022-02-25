@@ -1,6 +1,9 @@
 title=""
 layout="main"
 url="trainings/:id"
+[viewBag]
+localeUrl[en] = "telim/:id"
+localeUrl[ru] = "trening/:id"
 ==
 use Gadimliestudio\Trainings\Models\Training;
 public function onStart() {

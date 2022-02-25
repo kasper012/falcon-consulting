@@ -167,17 +167,17 @@ tabs:
 
 
 
-        trainings:
-            tab: Treninqlər
-            type: repeater
-            prompt: Yeni treninq əlavə et
-            form:
-                fields:
-                    name:
-                        label: Treninqın başlığı
-                    image:
-                        label: Şəkil
-                        type: mediafinder
+        # trainings:
+        #     tab: Treninqlər
+        #     type: repeater
+        #     prompt: Yeni treninq əlavə et
+        #     form:
+        #         fields:
+        #             name:
+        #                 label: Treninqın başlığı
+        #             image:
+        #                 label: Şəkil
+        #                 type: mediafinder
 
 
         services_title:
