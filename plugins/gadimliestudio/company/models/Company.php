@@ -50,6 +50,7 @@ class Company extends Model
       'partner_suptitle',
       'partner_text',
       'values',
+      'socials'
 
     ];    
 

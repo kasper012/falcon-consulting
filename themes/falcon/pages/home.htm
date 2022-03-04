@@ -316,6 +316,7 @@ postPage = "post"
                 </div>
               </div>
               <div class="team-list">
+                {{ company }}
                 {% for teammate in company.team %}
                 <div class="column column-3 team-wrapper">
                   <div class="team-img-wrapper">
@@ -326,6 +327,13 @@ postPage = "post"
                     <div class="team-desc">
                       <p class="team-name">{{ teammate.name }}</p>
                       <p class="team-job">{{ teammate.post }}</p>
+                      <div class="d-flex team-socials mt-1">
+                        {% for social in teammate.socials %}
+                        <a href="{{ social.url }}"><i class="fab fa-{{ social.name }}-square"></i></a>
+                        {% endfor %}
+                    </div>
+                    
+                                            
                     </div>
                   </div>
                 </div>

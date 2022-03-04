@@ -164,6 +164,16 @@ tabs:
                         label: Komanda üzvün adı və soyadı
                     post:
                         label: Komanda üzvün vəzifəsi
+                    socials:
+                        type: repeater
+                        prompt: Komanda üzvü sosial şəbəkəsi
+                        form:
+                            fields: 
+                                name:
+                                    label: Sosial şəbəkəsinin adı
+                                url: 
+                                    label: Sosial şəbəkəsinin linki
+                                
 
 
 
