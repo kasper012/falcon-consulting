@@ -177,24 +177,24 @@ tabs:
 
 
 
-        trainings:
-            tab: Treninqlər
-            type: repeater
-            prompt: Yeni treninq əlavə et
-            form:
-                fields:
-                    name:
-                        label: Treninqın başlığı
-                    image:
-                        label: Şəkil
-                        type: mediafinder
+        # trainings:
+        #     tab: Treninqlər
+        #     type: repeater
+        #     prompt: Yeni treninq əlavə et
+        #     form:
+        #         fields:
+        #             name:
+        #                 label: Treninqın başlığı
+        #             image:
+        #                 label: Şəkil
+        #                 type: mediafinder
 
 
         services_title:
             tab:  Məsləhət xidmətlərimizin sahələri
             label: Xidmətlər bölməsində başlıq
             span: storm
-            cssClass: col-md-12
+            cssClass: col-md-6
         services_subtitle:
             tab:  Məsləhət xidmətlərimizin sahələri
             label: Xidmətlər bölməsində başlıq altında yazı
@@ -205,7 +205,7 @@ tabs:
             label: Xidmətlər bölməsində mətn
             type: richeditor
             span: storm
-            cssClass: col-md-6
+            cssClass: col-md-12
         consulting_areas:
             tab: Məsləhət xidmətlərimizin sahələri
             type: repeater

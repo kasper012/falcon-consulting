@@ -169,14 +169,14 @@ postPage = "post"
                   {% for service in company.consulting_areas   %}
                   <div class="services-card">
                     <div class="service-images">
-                      <img class="card-images services-card-img" src="{{ area.image | media }}" alt="service image"
+                      <img class="card-images services-card-img" src="{{ service.image | media }}" alt="service image"
                         width="70" height="70"/>
                     </div>
                     <div class="service-desc">
                       <div class="services-card-body">
-                        <p class="card-title">{{ area.title }}</p>
+                        <p class="card-title">{{ service.title }}</p>
                         <p class="service-card-desc">
-                          {{ area.description | raw }}
+                          {{ service.description | raw }}
                         </p>
                       </div>
                     </div>

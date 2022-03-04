@@ -10,7 +10,7 @@ columns:
         span: storm
         cssClass: col-md-1
     title:
-        label: Title
+        label: Başlıq
         searchable: true
         span: storm
         cssClass: col-md-11
