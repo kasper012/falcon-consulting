@@ -7,6 +7,7 @@ localeTitle[en] = "Home"
 localeTitle[ru] = "Главная"
 
 [Sliders]
+
 [blogPosts]
 pageNumber = "{{ :page }}"
 postsPerPage = 3
@@ -15,7 +16,6 @@ sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
 ==
-
 {% partial 'header-theme' %}
     <!--SLIDER START-->
     <section class="header-swiper" id="home">
@@ -316,7 +316,6 @@ postPage = "post"
                 </div>
               </div>
               <div class="team-list">
-                {{ company }}
                 {% for teammate in company.team %}
                 <div class="column column-3 team-wrapper">
                   <div class="team-img-wrapper">
