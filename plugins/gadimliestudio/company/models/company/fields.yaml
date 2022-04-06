@@ -132,12 +132,6 @@ tabs:
             span: storm
             cssClass: col-md-6
             type: richeditor
-        
-
-
-
-
-
         partners:
             tab: Müştərilər
             type: repeater
@@ -146,6 +140,13 @@ tabs:
                 fields:
                     image:
                         type: mediafinder
+                        span: storm
+                        cssClass: col-md-6
+                    link:
+                        label: Link
+                        span: storm
+                        cssClass: col-md-6
+                    
 
 
 
