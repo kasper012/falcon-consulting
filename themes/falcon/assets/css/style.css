@@ -984,7 +984,7 @@ button:focus {
 
 .header-swiper .header-desc {
   position: absolute;
-  bottom: 19%;
+  bottom: 5%;
   left: 13%;
   max-width: 480px;
   text-align: left;

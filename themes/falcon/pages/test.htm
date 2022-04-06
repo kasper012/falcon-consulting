@@ -1,6 +1,8 @@
-title = "test"
 url = "/test"
+layout = "main"
+title = "test"
 
 [Company]
 ==
-{{ company }}
+{% if activeLocale == 'ru'  %} russian {% elseif activeLocale == 'az' %} Azeri {% else %} english 
+{% endif %}

@@ -1,6 +1,6 @@
 url = "/"
 layout = "main"
-title = "Home"
+title = "Əsas səhifə"
 
 [viewBag]
 localeTitle[en] = "Home"
@@ -74,8 +74,8 @@ postPage = "post"
         <div class="container">
           <div class="row clearfix">
             <div class="column column-2 about-section d-flex align-items-center">
-              <div class="about-section-title ">
-                <h2 class="text-blue">{{ company.about_title }}</h2>
+              <div class="blog-title ">
+                <h3 class="text-blue">{{ company.about_title }}</h3>
                 <hr class="left-hr" />
                 <p class="sub-title">
                 </p>
@@ -162,12 +162,12 @@ postPage = "post"
 
               </div>
             </div>
-            <div class="service-card-loop">
+            <div class="service-card-loop justify-content-center">
               <div class="row">
 
                 <div class="service-card-wrapper card-loop-tablet" data-aos="fade-up" data-aos-duration="3100">
                   {% for service in company.consulting_areas   %}
-                  <div class="services-card">
+                  <div class="services-card w-100">
                     <div class="service-images">
                       <img class="card-images services-card-img" src="{{ service.image | media }}" alt="service image"
                         width="70" height="70"/>
@@ -193,42 +193,25 @@ postPage = "post"
       {{services}}
       <section class="Services-list" id="trainings">
         <div class="container">
-          <div class="about-section-title ">
-            <h2 class="text-blue">{{ 'Təlimlərimiz' |_ }}</h2>
+          <div class="blog-title ">
+            <h3 class="text-blue">{{ 'Təlimlərimiz' |_ }}</h3>
           </div>
           <hr class="left-hr mb-5" />
           <div class="row service-loop-wrap clearfix">
             {% for training in trainings %}
-            <div class="column column-3 service-card-tablet"><a href="{{ 'services-detailed'| page({id: training.id})}}">
+            <div class="column column-3 service-card-tablet">
+            <a href="{{ 'services-detailed'| page({id: training.id})}}">
               <div class="service-cards card">
                 <div class="card-img-top img-zoom-wrapper">
                   <img class="service-card-img card-img" src="{{ training.image | media }}"
                     alt="Business Consulting" />
                 </div>
                 <div class="card-body service-card-body">
-                  {% if false %}
-                  <div class="serviceman-name">
-                    <p>By <span class="s-name">Daniel Zelda</span></p>
-                  </a>
-                  </div>
-                  {% endif %}
                   <div class="service-card-title mt-4">
-                    
                       <h3 class="text-bold">{{ training.title }}</h3>
-                    
                   </div>
-                  {% if false %}
-                  <div class="service-card-desc">
-                    <p>
-                      We live in the world of data now; data allows us to make
-                      realistic decisions about the future. No financial...
-                    </p>
-                    <div class="service-card-button">
-                      <a href="singleService.html" class="button style-8">Read More</a>
-                    </div>
-                  </div>
-                  {% endif %}
                 </div>
+                </a>
               </div>
             </div>
             {% endfor %}
@@ -264,29 +247,31 @@ postPage = "post"
             <div class="blog-loop">
               {% for post in blogPosts.posts %}
               <div class="column column-3 blog-list-wrapper">
-                <div class="blog-card card">
-                  <div class="card-img-wrapper">
-                    <div class="card-img-top img-zoom-wrapper">
-                      <img class="res-img card-img" src="{{ post.featured_images[0].path }}" alt="card-img" />
+                <a href="{{ post.url }}">
+                    <div class="blog-card card">
+                      <div class="card-img-wrapper">
+                        <div class="card-img-top img-zoom-wrapper">
+                          <img class="res-img card-img" src="{{ post.featured_images[0].path }}" alt="card-img" />
+                        </div>
+                        {% if false %}
+                        <div class="card-category">
+                          <p>engineering</p>
+                        </div>
+                        {% endif %}
+                      </div>
+                      <div class="card-body">
+                        <p class="card-title">
+                          <a href="{{ post.url }}">{{ post.title }}</a>
+                        </p>
+                        <p class="card-desc">
+                          {{ post.excerpt | raw }}
+                        </p>
+                        <div class="card-date">
+                          <small>{{ post.published_at|date('d/m/Y') }}</small>
+                        </div>
+                      </div>
                     </div>
-                    {% if false %}
-                    <div class="card-category">
-                      <p>engineering</p>
-                    </div>
-                    {% endif %}
-                  </div>
-                  <div class="card-body">
-                    <p class="card-title">
-                      <a href="{{ post.url }}">{{ post.title }}</a>
-                    </p>
-                    <p class="card-desc">
-                      {{ post.excerpt | raw }}
-                    </p>
-                    <div class="card-date">
-                      <small>{{ post.published_at|date('d/m/Y') }}</small>
-                    </div>
-                  </div>
-                </div>
+                </a>
               </div>
               {% endfor %}
 
@@ -325,10 +310,10 @@ postPage = "post"
                     </div>
                     <div class="team-desc">
                       <p class="team-name">{{ teammate.name }}</p>
-                      <p class="team-job">{{ teammate.post }}</p>
+                      <p class="team-job">{{ teammate.post | raw }}</p>
                       <div class="d-flex team-socials mt-1">
                         {% for social in teammate.socials %}
-                        <a href="{{ social.url }}"><i class="fab fa-{{ social.name }}-square"></i></a>
+                        <a href="{{ social.url }}"><i class="fab fa-{{ social.name | lower }}-square"></i></a>
                         {% endfor %}
                     </div>
                     
@@ -343,7 +328,6 @@ postPage = "post"
           </div>
         </section>
         <!---END TEAM-->
-        {% if false %}
       <!--PARTNER START-->
       <section class="Partner" id="partners">
         <div class="container">
@@ -405,7 +389,6 @@ postPage = "post"
         </div>
       </section>
       <!--END PARTNER-->
-      {% endif %}
       <!---APPOITNMENT START-->
       <section class="Appointment mt-10" id="contacts">
         <div class="container">

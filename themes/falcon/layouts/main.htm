@@ -16,9 +16,21 @@ forceUrl = 0
 
 <head>
   <meta charset="UTF-8" />
+    {% if activeLocale == 'ru'  %} 
+  <title>{{ company.name }} - Построение систем корпоративного управления</title>
+      <meta name="description" content="Развитие вашего бизнеса. Корпоративность. Система. Менеджмент. Оптимизация бизнес-процессов. Навыки управления." />
+
+  {% elseif activeLocale == 'az' %} 
+  <title>{{ company.name }} - Korporativ idarəetmə sistemlərinin qurulması</title>
+    <meta name="description" content="Biznesinizin inkişafı. Korporativləşmə. Sistem. Menecment. Biznes proses optimizasiyası. İdarəetmə bacarıqları." />
+
+  {% else %} 
+    <title>{{ company.name }} - Corporate management systems building</title>
+  <meta name="description" content="Development of your business. System. Management. Business process optimization. Management skills." />
+
+{% endif %}
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ this.page.title }}- {{ company.name }}</title>
 
   <link rel="stylesheet" href="{{ 'assets/css/style.css' | theme }}" />
   <link rel="stylesheet" href="{{ 'assets/css/responsive.css' | theme }}" />
@@ -42,6 +54,7 @@ forceUrl = 0
   <link rel='shortlink' href='https://konsultan.themesawesome.com/?p=127' />
   <link rel="alternate" type="application/json+oembed" href="https://konsultan.themesawesome.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkonsultan.themesawesome.com%2F%3Fservice%3Dmarket-research" />
   <link rel="alternate" type="text/xml+oembed" href="https://konsultan.themesawesome.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkonsultan.themesawesome.com%2F%3Fservice%3Dmarket-research&#038;format=xml" />
+
   <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
